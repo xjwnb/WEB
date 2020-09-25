@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-25 19:55:39
- * @LastEditTime: 2020-09-25 22:19:40
+ * @LastEditTime: 2020-09-25 22:29:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\2.js
@@ -63,3 +63,24 @@ console.log(list); // [ 3, 2, 0.5 ]
     event.target 是触发事件的目标元素。所以是 button 。
 */
 
+// 题目 5：
+class Counter {
+  constructor () {
+    this.count = 0;
+  }
+  increment() {
+    this.count++;
+  }
+}
+const counterOne = new Counter();
+counterOne.increment();
+counterOne.increment();
+const counterTwo = counterOne;
+counterTwo.increment();
+console.log(counterOne.count); // 3
+/*
+原因：
+    counterOne 是类 Counter 的实例。调用两次 increment 方法之后, count 属性的值为 2 。
+    但是将 counterOne 赋值给常量 counterTwo ，由于 counterOne 是引用类型，因此他们指向同
+    一块内存地址，所以调用 counterTwo.increment() , count 的值为 3。
+*/
