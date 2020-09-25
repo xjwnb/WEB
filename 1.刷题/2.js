@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-25 19:55:39
- * @LastEditTime: 2020-09-25 20:39:46
+ * @LastEditTime: 2020-09-25 21:09:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\2.js
@@ -18,5 +18,6 @@ arr1.splice(1, 2, "加油啊");
 /*
 答案：splice
 原因：
-    splice 
+    splice 将原来的数组从参数第一个数字开始，删除第二个参数的个数，修改成第三个参数。
+    map, filter,find, 返回新的数组.
 */
