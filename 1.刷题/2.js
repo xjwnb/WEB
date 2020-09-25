@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-25 19:55:39
- * @LastEditTime: 2020-09-25 22:44:38
+ * @LastEditTime: 2020-09-25 22:56:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\2.js
@@ -48,7 +48,8 @@ console.log(list); // [ 3, 2, 0.5 ]
 
 // 题目 4：
 // 单击按钮时 event.target 是什么？
-{/* 
+{
+  /* 
 <div onclick="console.log('first div')">
   <div onclick="console.log('second div')">
     <button onclick="console.log('button')">
@@ -56,7 +57,8 @@ console.log(list); // [ 3, 2, 0.5 ]
     </button>
   </div>
 </div> 
-*/}
+*/
+}
 // 答案： button
 /*
 原因：
@@ -65,7 +67,7 @@ console.log(list); // [ 3, 2, 0.5 ]
 
 // 题目 5：
 class Counter {
-  constructor () {
+  constructor() {
     this.count = 0;
   }
   increment() {
@@ -95,7 +97,7 @@ console.log(String.raw`Hello\nworld!`); // Hello\nworld!
 
 // 题目 7：
 for (var i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i));  // 3 3 3
+  setTimeout(() => console.log(i)); // 3 3 3
 }
 for (let i = 0; i < 3; i++) {
   setTimeout(() => console.log(i)); // 0 1 2
@@ -107,3 +109,33 @@ for (let i = 0; i < 3; i++) {
     而第二个循环中的变量 i 是用 let 声明的，let 具有块级作用域，所以会输出 0 1 2 。
 */
 
+// 题目 8：
+const obj = { 1: "a", 2: "b", 3: "c" };
+const set = new Set([1, 2, 3, 4, 5, 6]);
+console.log(obj.hasOwnProperty("1")); // true
+console.log(obj.hasOwnProperty(1)); // true
+console.log(set.has("1")); // false
+console.log(set.has(1)); // true
+/*
+原因：
+    所以对象值，都会被存储为字符串，所以 obj.hasOwnProperty("1") 会返回 true 。
+    而 Set 不会存储为字符串。所以 set.has("1") 返回 false 。
+*/
+
+// 题目 9：
+console.log(Promise.resolve(6)); // Promise {<fulfilled>: 6}
+/*
+原因：
+    修改 Promise 的状态。
+*/
+
+// 题目 10：
+for (let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i); // 1 2 4
+}
+/*
+原因：
+    简单逻辑，循环 1 ~ 4 ，如果循环到 3 的时候跳过本次循环，所以没有执行下面的打印代码，
+    所以输出 1 2 4
+*/
