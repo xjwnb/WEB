@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-25 19:55:39
- * @LastEditTime: 2020-09-25 22:29:47
+ * @LastEditTime: 2020-09-25 22:44:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\2.js
@@ -84,3 +84,26 @@ console.log(counterOne.count); // 3
     但是将 counterOne 赋值给常量 counterTwo ，由于 counterOne 是引用类型，因此他们指向同
     一块内存地址，所以调用 counterTwo.increment() , count 的值为 3。
 */
+
+// 题目 6：
+console.log(String.raw`Hello\nworld!`); // Hello\nworld!
+/*
+原因：
+    String.raw 函数是用来获取一个模板字符串的原始字符串的，返回一个字符串，忽略了转义符(\n, \v, \t)等，
+    所以返回 Hello\nworld!
+*/
+
+// 题目 7：
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i));  // 3 3 3
+}
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i)); // 0 1 2
+}
+/*
+原因：
+    由于 JavaScript 中的事件执行机制，setTimeout 函数真正被执行时，循环已经完成，由于变量 i 是用 
+    var 声明的，全局性没有块级作用域，所以此时的 i 已经是 3，再到执行 setTimeout 的时候就只能输出 3。
+    而第二个循环中的变量 i 是用 let 声明的，let 具有块级作用域，所以会输出 0 1 2 。
+*/
+
