@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-25 19:55:39
- * @LastEditTime: 2020-09-25 21:09:16
+ * @LastEditTime: 2020-09-25 21:16:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\2.js
@@ -15,6 +15,7 @@ arr1.find(x => x !== "小卡车");
 arr1.reduce((acc, cur) => acc = acc + cur + " ", "猪头怪");
 arr1.slice(1, 2, "小卡车");
 arr1.splice(1, 2, "加油啊");
+console.log(arr1);
 /*
 答案：splice
 原因：
