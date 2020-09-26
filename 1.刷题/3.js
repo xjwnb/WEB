@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-26 10:43:46
- * @LastEditTime: 2020-09-26 11:30:36
+ * @LastEditTime: 2020-09-26 11:33:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\3.js
@@ -61,4 +61,12 @@ console.log(result); // 2
 /*
 原因：  
     addToList 函数中返回的是 push 函数的返回值，而 push 函数返回值是新数组的长度，所以输出为 2 。
+*/
+
+// 题目 6：
+console.log(`${(x => x)('I love')} to program`); // I love to program
+/*
+原因：
+    在模板字符串中表达式表示的是一个立即执行函数，传入的参数是 'I love' 而函数的形参为 x ，且返回值为 x。
+    所以该表达式返回的是 I love ，因此输出结果为 I love to program 。
 */
