@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-26 10:43:46
- * @LastEditTime: 2020-09-26 11:47:50
+ * @LastEditTime: 2020-09-26 12:56:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\3.js
@@ -121,4 +121,44 @@ for (let i = 0; i < 3; i++) {
         }
       }
     所以调用 sum.default 可以调用函数
+*/
+
+// 以下那一项会对对象 person 有副作用
+const person = { name: "小卡车" };
+Object.seal(person);
+/**
+ * A. person.name = "xkc"
+ * B. person.age = 20
+ * C. delete person.name
+ * D. Object.assign(person, {age: 20})
+ */
+// 答案： A
+/*
+原因：
+    使用 Object.seal 可以防止新属性被添加，或者存在属性被移除
+*/
+
+// 题目 10：
+// 依次输出什么
+const myPromise = () => Promise.resolve("小卡车要加油努力啊！");
+function fn1() {
+  myPromise().then(res => console.log(res));
+  console.log("fn1");
+}
+async function fn2() {
+  console.log(await myPromise);
+  console.log("fn2");
+}
+fn1();
+fn2();
+/**
+ * 答案：
+ *  fn1
+ *  小卡车要加油努力啊！
+ *  [Function: myPromise]
+ *  fn2
+ */
+/*
+原因：
+    任务轮询
 */
