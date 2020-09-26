@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-26 10:43:46
- * @LastEditTime: 2020-09-26 11:25:07
+ * @LastEditTime: 2020-09-26 11:30:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\3.js
@@ -50,4 +50,15 @@ undefined;
 /*
 原因:
     JavaScript 中只有六个假值： undefined, null, NaN, 0, '', false 。
+*/
+
+// 题目 5：
+function addToList(item, list) {
+  return list.push(item);
+}
+const result = addToList('小卡车', ['xkc']);
+console.log(result); // 2
+/*
+原因：  
+    addToList 函数中返回的是 push 函数的返回值，而 push 函数返回值是新数组的长度，所以输出为 2 。
 */
