@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-26 10:43:46
- * @LastEditTime: 2020-09-26 11:33:51
+ * @LastEditTime: 2020-09-26 11:47:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\1.刷题\3.js
@@ -69,4 +69,56 @@ console.log(`${(x => x)('I love')} to program`); // I love to program
 原因：
     在模板字符串中表达式表示的是一个立即执行函数，传入的参数是 'I love' 而函数的形参为 x ，且返回值为 x。
     所以该表达式返回的是 I love ，因此输出结果为 I love to program 。
+*/
+
+// 题目 7：
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1); // 3 3 3
+}
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1); // 0 1 2
+}
+/*
+原因：
+    第一个 for 循环中的 i 是用 var 声明的，不具有块级作用域，且是一个全局变量，而 setTimeout 是宏任务，不能同步执行
+    所以在循环三次之后 i 的值已经是 3 时，才执行 setTimeout， 所以输出 3 3 3 。
+    第二个 for 循环中的 i 则是用 let 声明的，具有块级作用域，所以对应的 i 只在对应的块级作用域中起效果。
+    所以输出 0 1 2 。
+*/
+
+// 题目 8：
+// 在 index.js 中如何调用 sum.js 中的 sum 函数
+/**
+ * sum.js
+ * export default function sum(x) {
+ *   return x + x
+ * }
+ * index.js
+ * import * as sum from './sum.js';
+ */
+// 答案 sum.default(4)
+/*
+原因：
+    使用符号 * ，引入的是文件的所有导出值，包括默认和具名。
+    举例：
+      // info.js
+      export const name = '小卡车';
+      export const age = 20;
+      export default '小卡车要加油啊！';
+      // index.js
+      import * as info from './info.js';
+      console.log(info);
+    则会输出结果:
+      {
+        default: "小卡车要加油啊！",
+        name: "小卡车",
+        age: 20,
+      }
+    而已本题为例，相当于引入值 sum:
+      {
+        default: function sum(x) {
+          return x + x;
+        }
+      }
+    所以调用 sum.default 可以调用函数
 */
