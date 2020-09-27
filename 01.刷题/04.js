@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-27 20:21:54
- * @LastEditTime: 2020-09-27 21:37:30
+ * @LastEditTime: 2020-09-27 21:48:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\04.js
@@ -118,4 +118,22 @@ for (let item of set) {
 原因：
     for of 遍历出的值为对象的值。用 + 运算符 + 6。遍历出来的第一个值是 number ，所以输出 7，
     第二个是字符串，便输出 "小卡车6", 第三个是一个对象，所以字符串化后变成 [object Object]6;
+*/
+
+// 题目 10：
+async function* range(start, end) {
+  for (let i = start; i <= end; i++) {
+    yield Promise.resolve(i);
+  }
+}
+(async () => {
+  const gen = range(1, 3);
+  for await (const item of gen) {
+    console.log(item); // 1 2 3
+  }
+})();
+/*
+原因:
+    我们给函数 range 传递：Promise{1},Promise{2}, Promise{3}, Generator 函数 range 返回一个全是 asyncObject promise数组。
+    赋值给变量 gen, 之后使用 for await of 进行遍历。而使用的是 await ，resolve 状态，所以输出 1 2 3
 */
