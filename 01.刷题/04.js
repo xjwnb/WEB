@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-27 20:21:54
- * @LastEditTime: 2020-09-27 21:27:52
+ * @LastEditTime: 2020-09-27 21:37:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\04.js
@@ -89,4 +89,33 @@ msg.name; // get
 原因：
     使用 Proxy 会给一个对象添加自定义行为。传入的第一个参数是作为新创建变量（msg）的值，第二个参数，是添加的新
     自定义行为，set 函数会在对象被赋值的时候调用，而 get 函数会在对象被获取的时候调用。
+*/
+
+// 题目 8：
+var arr1 = [1, 2, 3].map((item) => {
+  if (typeof item === "number") {
+    return;
+  }
+  return num * 2;
+});
+console.log(arr1); // [ undefined, undefined, undefined ]
+/*
+原因：
+    调用 map 的数组元素类型都是 number 。所以返回空。而默认映射的值是 undefined， 所以返回的新数组为
+    [ undefined, undefined, undefined ]
+*/
+
+// 题目 9：
+const set = new Set();
+set.add(1);
+set.add("小卡车");
+set.add({ name: "小卡车" });
+console.log(set);
+for (let item of set) {
+  console.log(item + 6); // 7 小卡车6 [object Object]6
+}
+/*
+原因：
+    for of 遍历出的值为对象的值。用 + 运算符 + 6。遍历出来的第一个值是 number ，所以输出 7，
+    第二个是字符串，便输出 "小卡车6", 第三个是一个对象，所以字符串化后变成 [object Object]6;
 */
