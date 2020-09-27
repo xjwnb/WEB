@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-27 20:21:54
- * @LastEditTime: 2020-09-27 21:13:32
+ * @LastEditTime: 2020-09-27 21:17:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\04.js
@@ -55,4 +55,20 @@ console.log(str.padStart(11, "变秃吧")); // 变秃吧小卡车努力加油啊
 原因：
     padStart 方法有两个参数，第一个参数是一个数字，规定字符串的长度，如果小于字符串原来的长度的话，则返回原字符串。
     而第二个参数（可选）是将第一个参数的数字大于字符串长度的部分，用第二个参数填补，如果没有传入第二参数则使用空格填补。
+*/
+
+// 题目 6:
+function compareMembers(person1, person2 = person) {
+  if (person1 !== person2) {
+    console.log("Not the same!");
+  } else {
+    console.log("They are the same!");
+  }
+}
+const person = { name: "小卡车" };
+compareMembers(person); // They are the same!
+/*
+原因：
+    campareMembers 函数中有两个形参，而第二个参数有一个 person 的默认值。
+    在调用的时候只传入一个叫做 person 变量，因此，第二个参数也会默认使用 person 变量，因此参数相等。
 */
