@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-27 20:21:54
- * @LastEditTime: 2020-09-27 21:01:08
+ * @LastEditTime: 2020-09-27 21:13:32
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\04.js
@@ -36,4 +36,23 @@ console.log(shape); // { x: 10, y: 20 }
     所以不能被修改，所以返回原值。
 */
 
+// 题目 4:
+function getAge(...args) {
+  console.log(typeof args);
+}
+getAge(1); // object
+/*
+原因：
+    由于是用扩展运算符作为形参，所以 ...args 中的 args 是一个数组，而 typeof 检测数组返回的是 "object"。
+*/
 
+// 题目 5:
+const str = "小卡车努力加油啊";
+console.log(str.padStart(9)); // " 小卡车努力加油啊"
+console.log(str.padStart(7)); // "小卡车努力加油啊"
+console.log(str.padStart(11, "变秃吧")); // 变秃吧小卡车努力加油啊
+/*
+原因：
+    padStart 方法有两个参数，第一个参数是一个数字，规定字符串的长度，如果小于字符串原来的长度的话，则返回原字符串。
+    而第二个参数（可选）是将第一个参数的数字大于字符串长度的部分，用第二个参数填补，如果没有传入第二参数则使用空格填补。
+*/
