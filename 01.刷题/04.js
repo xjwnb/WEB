@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-27 20:21:54
- * @LastEditTime: 2020-09-27 21:17:59
+ * @LastEditTime: 2020-09-27 21:27:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\04.js
@@ -71,4 +71,22 @@ compareMembers(person); // They are the same!
 原因：
     campareMembers 函数中有两个形参，而第二个参数有一个 person 的默认值。
     在调用的时候只传入一个叫做 person 变量，因此，第二个参数也会默认使用 person 变量，因此参数相等。
+*/
+
+// 题目 7：
+const handler = {
+  set: () => {
+    console.log("set");
+  },
+  get: () => {
+    console.log("get");
+  },
+};
+const msg = new Proxy({}, handler);
+msg.name = "小卡车"; // set
+msg.name; // get
+/*
+原因：
+    使用 Proxy 会给一个对象添加自定义行为。传入的第一个参数是作为新创建变量（msg）的值，第二个参数，是添加的新
+    自定义行为，set 函数会在对象被赋值的时候调用，而 get 函数会在对象被获取的时候调用。
 */
