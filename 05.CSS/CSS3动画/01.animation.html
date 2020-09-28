@@ -23,10 +23,12 @@
       left: 50%;
       top: 50vh;
       transform: translate(-50%, -50%);
-      animation-name: xkc;
+      /* 多个动画 */
+      animation-name: xkc, radius;
       animation-duration: 2s;
     }
 
+    /* 第一个动画 */
     @keyframes xkc {
       0% {
         background-color: cornflowerblue;
@@ -40,6 +42,12 @@
       }
       100% {
         background-color: cyan;
+      }
+    }
+    /* 第二个动画 */
+    @keyframes radius {
+      50% {
+        border-radius: 50%;
       }
     }
   </style>
