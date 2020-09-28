@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-28 15:20:40
- * @LastEditTime: 2020-09-28 15:35:28
+ * @LastEditTime: 2020-09-28 15:44:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\05.js
@@ -38,11 +38,40 @@ console.log(fn2.prototype); // undefined
 */
 
 // 题目 3：
-const myFunc = ({x, y , z}) => {
+const myFunc = ({ x, y, z }) => {
   console.log(x, y, z);
 };
 myFunc(1, 2, 3); // undefined undefined undefined
 /*
 原因：
     myFunc 函数接受的形参是一个拥有 x, y, z 属性的对象，而传入的实参是三个独立的数字，因此返回默认值 undefined。
+*/
+
+// 题目 4：
+const myPromise = () => {
+  return Promise.resolve("小卡车加油！");
+};
+function firstFunc() {
+  myPromise().then((res) => {
+    console.log(res);
+  });
+  console.log("first");
+}
+async function secondFunc() {
+  console.log(await myPromise());
+  console.log("second");
+}
+firstFunc();
+secondFunc();
+/**
+ * 答案：
+ *     first
+ *     小卡车加油！
+ *     小卡车加油！
+ *     second
+ */
+/*
+原因：
+    由于 firstFunc 函数中 Promise 处于微任务中，因此先执行主任务中的打印操作。所以执行顺序是 first 小卡车加油！
+    而 secondFunc 函数则使用 async await 关键字，停止了后面的打印操作，先执行了 Promise 操作。 所以执行顺序是 小卡车加油！ second
 */
