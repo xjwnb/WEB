@@ -4,4 +4,4 @@
 
 ### Vue Router中文文档：https://router.vuejs.org/zh/
 
-###  Vuex 文档：https://vuex.vuejs.org/zh/
+### Vuex 文档：https://vuex.vuejs.org/zh/
