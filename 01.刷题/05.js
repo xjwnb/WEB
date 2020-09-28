@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-28 15:20:40
- * @LastEditTime: 2020-09-28 15:44:40
+ * @LastEditTime: 2020-09-28 16:06:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\05.js
@@ -74,4 +74,63 @@ secondFunc();
 原因：
     由于 firstFunc 函数中 Promise 处于微任务中，因此先执行主任务中的打印操作。所以执行顺序是 first 小卡车加油！
     而 secondFunc 函数则使用 async await 关键字，停止了后面的打印操作，先执行了 Promise 操作。 所以执行顺序是 小卡车加油！ second
+*/
+
+// 题目 5：
+const output = `${[] && "Im"}possible! You should ${
+  "" && "[object Object]"
+} see a therapist after so much JavaScript lol`;
+console.log(output); // Impossible! You should  see a therapist after so much JavaScript lol
+/*
+原因：
+    在模板字符串中第一个表达式中的 [] 是一个真值，配合 && 关键字，所以会执行到 "Im"。
+    而第二个表达式中 ”“ 则是一个假值，配合 && 关键字，因此不会执行后面操作。
+*/
+
+// 题目 6：
+async function* range(start, end) {
+  for (let i = start; i <= end; i++) {
+    yield Promise.resolve(i);
+  }
+}
+(async () => {
+  const gen = range(1, 3);
+  for await (const item of gen) {
+    console.log(item); // 1 2 3
+  }
+})();
+/*
+原因:
+    我们给函数 range 传递：Promise{1},Promise{2}, Promise{3}, Generator 函数 range 返回一个全是 asyncObject promise数组。
+    赋值给变量 gen, 之后使用 for await of 进行遍历。而使用的是 await ，resolve 状态，所以输出 1 2 3
+*/
+
+// 题目 7：
+console.log(!!null); // false
+console.log(!!""); // false
+console.log(!!1); // true
+/*
+原因：
+    null 是假值，!null 返回 true, !!null 返回 false;
+    "" 是假值，!"" 返回 true, !!"" 返回 false;
+    1 是真值，!1 返回 false, !!1 返回 true。
+*/
+
+// 题目 8：
+function getFine(speed, amount) {
+  const formattedSpeed = new Intl.NumberFormat("en-US", {
+    style: "unit",
+    unit: "mile-per-hour",
+  }).format(speed);
+  const formattedAmount = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(amount);
+  return `The driver drove ${formattedSpeed} and has to pay ${formattedAmount}`;
+}
+console.log(getFine(130, 300)); // The driver drove 130 mph and has to pay $300.00
+/*
+原因：
+    Intl.NumberFormat 方法，可以格式化任意区域的数字值，我们对数字值 130 进行mile-per-hour作为 unit 的 en-US 区域格式化，结果为 130 mph，
+    对数字值 300 进行 USD 作为 currentcy 的 en-US 区域格式化，结果为 $300.00。
 */
