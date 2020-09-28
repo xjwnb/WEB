@@ -1,0 +1,86 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-28 21:36:49
+ * @LastEditTime: 2020-09-28 22:04:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \WEB\05.CSS\CSS3动画\02.小心心.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: #222f3e;
+        position: relative;
+      }
+      /* 画小心心 */
+      .heart {
+        width: 100px;
+        height: 100px;
+        background-color: #ff0000;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transform: rotate(45deg) scale(1);
+        animation-name: xkc;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      .heart::before {
+        content: "";
+        width: 100px;
+        height: 100px;
+        background-color: #ff0000;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateX(-50px);
+      }
+      .heart::after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        background-color: #ff0000;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateY(-50px);
+      }
+      /* 动画 */
+      @keyframes xkc {
+        25% {
+          opacity: 1;
+          transform: rotate(45deg) scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: rotate(45deg) scale(0.5);
+        }
+        75% {
+          opacity: 1;
+          transform: rotate(45deg) scale(1);
+        }
+        85% {
+          opacity: 0.5;
+          transform: rotate(45deg) scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: rotate(45deg) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart"></div>
+  </body>
+</html>
