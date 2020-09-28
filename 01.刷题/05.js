@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-28 15:20:40
- * @LastEditTime: 2020-09-28 16:06:08
+ * @LastEditTime: 2020-09-28 16:13:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\05.js
@@ -133,4 +133,37 @@ console.log(getFine(130, 300)); // The driver drove 130 mph and has to pay $300.
 原因：
     Intl.NumberFormat 方法，可以格式化任意区域的数字值，我们对数字值 130 进行mile-per-hour作为 unit 的 en-US 区域格式化，结果为 130 mph，
     对数字值 300 进行 USD 作为 currentcy 的 en-US 区域格式化，结果为 $300.00。
+*/
+
+// 题目 9：
+const add = (x) => (y) => (z) => {
+  console.log(x, y, z);
+  return x + y + z;
+};
+add(1)(2)(3); // 1 2 3
+/*
+原因：
+    箭头函数第一个函数返回 x, 第二个函数返回 y, 第三个返回 z，最终打印出来。
+*/
+
+// 题目 10：
+
+/* 
+// index.js
+console.log("running index.js");
+import { sum } from "./sum.js";
+console.log(sum(1, 2));
+// sum.js
+console.log("running sum.js");
+export const sum = (a, b) => a + b; 
+*/
+/**
+ * 答案：
+ *     running sum.js
+ *     running index.js
+ *     3
+ */
+/*
+原因：
+    import 命令是编译阶段执行的，在代码运行之前。因此意味着被导入的模块会先执行，而导入模块会后执行。
 */
