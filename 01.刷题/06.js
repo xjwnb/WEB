@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-29 23:36:42
- * @LastEditTime: 2020-09-30 00:03:21
+ * @LastEditTime: 2020-09-30 00:11:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\06.js
@@ -77,7 +77,7 @@ getAge(); // ReferenceError
 */
 
 // 题目 6:
-console.log(`${(x => x)("I love")} to program !`); // I love to program !
+console.log(`${((x) => x)("I love")} to program !`); // I love to program !
 /*
 原因：
     在模板字符串中是一个立即执行函数，且传入的参数是 "I love" , 且函数是将传入的参数返回出来。因此输出 I love to program !。
@@ -118,4 +118,20 @@ console.log(typeof sayHi()); // "number"
 /*
 原因：
     关闭选项卡后，将删除存储在 sessionStorage 中的数据。
+*/
+
+// 题目 19：
+/* 
+const getList = ([x, ...y]) => [x, y];
+const getUser = user => { name: user.name, age:user.age };
+const list = [1, 2, 3, 4];
+const user = { name: "小卡车", age: 20 };
+console.log(getList(list));
+console.log(getUser(user)); */
+// 答案 [1, [2, 3, 4]] , undefined
+/*
+原因：
+    getList 函数接受一个数组为参数，且形参 [x, ...y] 可知，y 是一个数组，因此输出为 [1, [2, 3, 4]]。
+    而getUser 是一个传入对象为实参，且返回一个对象，因为函数是箭头函数，所以如果返回对象则一定要用圆括号包裹起返回的对象。
+    例如： const getUser = (user) => ({ name: user.name, age: user.age }); 。这是重点。
 */
