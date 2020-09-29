@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-29 23:36:42
- * @LastEditTime: 2020-09-29 23:47:15
+ * @LastEditTime: 2020-09-29 23:51:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\06.js
@@ -40,4 +40,21 @@ getAge(); // ReferenceError
 /*
 原因：
     使用 "use strict" 严格模式，可以确保不会意外声明全局变量，没有声明 age, 所以会引发 ReferenceError 的错误。
+*/
+
+// 题目 4：
+// 单击按钮时 event.target 的是什么？
+{/* 
+<div onclick="console.log('first div')"> 
+  <div onclick="console.log('second div')">
+    <button onclick="console.log('button')">
+      Click！
+    </button>
+  </div>
+</div> 
+*/}
+// 答案：button
+/*
+原因：
+    单击按钮，因此触发事件的元素是 button ，因此答案是button，虽然会引发冒泡。依次触发 button > second div > first div。
 */
