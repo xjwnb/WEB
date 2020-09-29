@@ -1,0 +1,77 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-28 22:12:36
+ * @LastEditTime: 2020-09-29 00:25:38
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \WEB\05.CSS\CSS3动画\03.动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: #474787;
+        position: relative;
+      }
+      .hearts {
+        width: 600px;
+        height: 300px;
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: space-around;
+      }
+      .heart {
+        width: 50px;
+        height: 50px;
+        background-color: #34ace0;
+        transform: rotate(45deg);
+        animation-name: scale;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      .heart::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: #34ace0;
+        position: absolute;
+        border-radius: 50%;
+        transform: translateX(-25px);
+      }
+      .heart::before {
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: #34ace0;
+        position: absolute;
+        border-radius: 50%;
+        transform: translateY(-25px);
+      }
+      /* 动画 */
+      @keyframes scale {
+        to {
+          transform: rotate(45deg) scale(3);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+  </body>
+</html>
