@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-29 23:36:42
- * @LastEditTime: 2020-09-29 23:57:12
+ * @LastEditTime: 2020-09-29 23:58:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\06.js
@@ -81,4 +81,20 @@ console.log(`${(x => x)("I love")} to program !`); // I love to program !
 /*
 原因：
     在模板字符串中是一个立即执行函数，且传入的参数是 "I love" , 且函数是将传入的参数返回出来。因此输出 I love to program !。
+*/
+
+// 题目 7:
+function compareMembers(person1, person2 = person) {
+  if (person1 !== person2) {
+    console.log("Not the same!");
+  } else {
+    console.log("They are the same!");
+  }
+}
+const person = { name: "小卡车" };
+compareMembers(person); // They are the same!
+/*
+原因：
+    campareMembers 函数中有两个形参，而第二个参数有一个 person 的默认值。
+    在调用的时候只传入一个叫做 person 变量，因此，第二个参数也会默认使用 person 变量，因此参数相等。
 */
