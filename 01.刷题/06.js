@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-29 23:36:42
- * @LastEditTime: 2020-09-29 23:58:10
+ * @LastEditTime: 2020-09-30 00:03:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\06.js
@@ -97,4 +97,25 @@ compareMembers(person); // They are the same!
 原因：
     campareMembers 函数中有两个形参，而第二个参数有一个 person 的默认值。
     在调用的时候只传入一个叫做 person 变量，因此，第二个参数也会默认使用 person 变量，因此参数相等。
+*/
+
+// 题目 8：
+function sayHi() {
+  return (() => 0)();
+}
+console.log(typeof sayHi()); // "number"
+/*
+原因：
+    typeof 后面是一个函数的调用，sayHi 函数被调用的时候，返回一个立即执行函数，且返回 0，因此 typeof 0，所以输出为 "number"。
+*/
+
+// 题目 9：
+// cool_secret 可以访问多长时间？
+/**
+ * sessionStorage.setItem("coll_secret", 123);
+ */
+// 答案： 用户关闭选项卡时。
+/*
+原因：
+    关闭选项卡后，将删除存储在 sessionStorage 中的数据。
 */
