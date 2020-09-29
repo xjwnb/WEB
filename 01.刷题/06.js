@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-29 23:36:42
- * @LastEditTime: 2020-09-29 23:51:47
+ * @LastEditTime: 2020-09-29 23:57:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\01.刷题\06.js
@@ -15,7 +15,7 @@ console.log(typeof typeof 1); // string
 */
 
 // 题目 2：
-const add = x => x + x;
+const add = (x) => x + x;
 function myFunc(num = 2, value = add(num)) {
   console.log(num, value);
 }
@@ -44,7 +44,8 @@ getAge(); // ReferenceError
 
 // 题目 4：
 // 单击按钮时 event.target 的是什么？
-{/* 
+{
+  /* 
 <div onclick="console.log('first div')"> 
   <div onclick="console.log('second div')">
     <button onclick="console.log('button')">
@@ -52,9 +53,32 @@ getAge(); // ReferenceError
     </button>
   </div>
 </div> 
-*/}
+*/
+}
 // 答案：button
 /*
 原因：
     单击按钮，因此触发事件的元素是 button ，因此答案是button，虽然会引发冒泡。依次触发 button > second div > first div。
+*/
+
+// 下面那些是假值
+/**
+ * 0;
+ * new Number(0);
+ * ("");
+ * (" ");
+ * new Boolean(false);
+ * undefined;
+ */
+// 答案： 0, "", undefined
+/*
+原因：
+    JavaScript 的只有六个假值，分别是： undefined, null, NaN, 0, "", false。
+*/
+
+// 题目 6:
+console.log(`${(x => x)("I love")} to program !`); // I love to program !
+/*
+原因：
+    在模板字符串中是一个立即执行函数，且传入的参数是 "I love" , 且函数是将传入的参数返回出来。因此输出 I love to program !。
 */
