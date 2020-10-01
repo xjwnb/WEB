@@ -18,7 +18,7 @@
 
 ### 	[06.DOM](https://github.com/xjwnb/WEB/tree/master/06.DOM)
 
-### 	[07.JavaScript](https://github.com/xjwnb/WEB/tree/master/07.JavaScript/01.HTML 中的 JavaScript)
+### 	[07.JavaScript](https://github.com/xjwnb/WEB/tree/master/07.JavaScript/01.HTML中的JavaScript)
 
 ### 	[收集的网址](https://github.com/xjwnb/WEB/tree/master/收集的网址)
 
