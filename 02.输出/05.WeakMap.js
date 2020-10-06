@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-06 00:08:49
- * @LastEditTime: 2020-10-06 09:56:42
+ * @LastEditTime: 2020-10-06 10:07:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\05.WeakMap.js
@@ -25,6 +25,9 @@ const User = (function () {
       const privateMembers = wm1.get(this) || {};
       privateMembers[property] = value;
       wm1.set(this, privateMembers);
+      console.log(this);
+      console.log(wm1);
+      console.log(privateMembers);
     }
     getPrivate(property) {
       return wm1.get(this)[property];
@@ -39,9 +42,10 @@ const User = (function () {
   return User;
 })();
 const user = new User(1);
-user.setPrivate();
+user.setPrivate("name", "小卡车");
 const id = user.getId();
 console.log(id); // 1
+console.log(user);
 
 
 const wm2 = new WeakMap();
