@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-06 10:47:40
- * @LastEditTime: 2020-10-06 10:53:12
+ * @LastEditTime: 2020-10-06 11:00:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\06.Map.js
@@ -25,6 +25,9 @@ console.log(values);
 // entries() 获得键值
 let personEntries = person.entries();
 console.log(personEntries);
-// 删除
+// delete 删除对应的键
 person.delete("age");
 console.log(person);
+// sizes 大小
+let sizes = person.size;
+console.log(sizes);
