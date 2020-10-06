@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-06 10:12:27
+ * @LastEditTime: 2020-10-06 10:37:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \WEB\02.输出\WeakMap.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      const DOMAddProperty = (function () {
+        const wm = new WeakMap();
+        class DOMAddProperty {
+          constructor(ele) {
+            this.ele = Symbol("ele");
+            this.setEle(ele);
+          }
+          setProperty(ele, value) {
+            const oldEle = wm.get(this) || {};
+            oldEle[ele] = value;
+            wm.set(this, oldEle);
+            console.log(wm);
+          }
+          getProperty(ele) {
+            console.log(wm.get(this));
+            return wm.get(this)[ele];
+          }
+          setEle(ele) {
+            this.setProperty(this.ele, ele);
+          }
+          getEle(ele) {
+            this.getProperty(ele);
+          }
+        }
+        return DOMAddProperty;
+      })();
+      const container = document.querySelector("#container");
+      const containerEle = new DOMAddProperty(container);
+      containerEle.setProperty("ClassName", "xkc");
+      console.log(containerEle.getProperty("ClassName"));
+    </script>
+  </body>
+</html>
