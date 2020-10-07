@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-07 11:40:44
- * @LastEditTime: 2020-10-07 12:47:32
+ * @LastEditTime: 2020-10-07 13:09:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\09.defineProperty.js
@@ -36,6 +36,10 @@ delete person1.name; // 无效
 console.log(person1.name); // 小卡车
 
 // 访问器属性 configurable enumerable get set
+/**
+ * get 获取函数，在读取属性时调用，默认为 undefined。
+ * set 设置函数，在写入属性时调用，默认为 undefined。
+ */
 let person2 = {
   name: "小卡车",
   age: 20,
@@ -78,5 +82,23 @@ console.log(descriptor);
  *  set: undefined,
  *  enumerable: false,
  *  configurable: false
+ *}
+ */
+let person3Descript = Object.getOwnPropertyDescriptors(person3);
+console.log(person3Descript);
+/**
+ *{
+ *  name: {
+ *    get: [Function: get],
+ *    set: undefined,
+ *    enumerable: false,
+ *    configurable: false
+ *  },
+ *  age: {
+ *    value: 20,
+ *    writable: false,
+ *    enumerable: false,
+ *    configurable: false
+ *  }
  *}
  */
