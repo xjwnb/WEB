@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-08 16:58:41
- * @LastEditTime: 2020-10-08 17:27:02
+ * @LastEditTime: 2020-10-08 20:26:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\17.类.js
@@ -34,4 +34,3 @@ console.log(xkc.getName()); // xkc
 xkc.setName("小卡车");
 console.log(xkc.getName()); // 小卡车
 console.log(xkc.toString()); // [object Person]
-
