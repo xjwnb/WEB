@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-09 11:49:57
- * @LastEditTime: 2020-10-09 13:46:16
+ * @LastEditTime: 2020-10-09 14:30:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\19.代理.js
@@ -37,8 +37,7 @@ const handler2 = {
 const proxy2 = new Proxy(target2, handler2);
 proxy2.foo;
 
-
-// 
+//
 const target3 = {
   foo: "bar",
 };
@@ -51,13 +50,12 @@ const proxy3 = new Proxy(target3, handler3);
 console.log(target3.foo); // bar
 console.log(proxy3.foo); // bar
 
-
-// 
+//
 const target4 = {
   foo: "bar",
 };
 const handler4 = {
-  get() {  
+  get() {
     return Reflect.get(...arguments);
   },
 };
@@ -65,8 +63,7 @@ const proxy4 = new Proxy(target4, handler4);
 console.log(target4.foo); // bar
 console.log(proxy4.foo); // bar
 
-
-// 
+//
 const target5 = {
   foo: "bar",
 };
@@ -77,11 +74,23 @@ const proxy5 = new Proxy(target5, handler5);
 console.log(target5.foo); // bar
 console.log(proxy5.foo); // bar
 
-
-// 
+//
 const target6 = {
   foo: "bar",
 };
 const proxy6 = new Proxy(target6, Reflect);
 console.log(target6.foo); // bar
 console.log(proxy6.foo); // bar
+
+// 可测销代理
+const target7 = {
+  foo: "bar",
+};
+const handler7 = {
+  get: Reflect.get,
+};
+const { proxy, revoke } = Proxy.revocable(target7, handler7);
+console.log(target7.foo); // bar
+console.log(proxy.foo); // bar
+revoke(); // 测销
+// console.log(proxy.foo); // TypeError
