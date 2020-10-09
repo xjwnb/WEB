@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-09 11:49:57
- * @LastEditTime: 2020-10-09 19:53:27
+ * @LastEditTime: 2020-10-09 20:07:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\19.代理.js
@@ -154,3 +154,27 @@ const msgProxy = new Proxy(msgTarget, {
 });
 msgProxy.password = "abcd"; // 请重新输入密码!
 msgProxy.password = "123456"; // 密码验证通过
+
+
+const UserList = [];
+class User {
+  constructor(name) {
+    this.setName(name);
+  }
+  setName(newName) {
+    this.name = newName;
+  }
+  getName() {
+    return this.name;
+  }
+}
+const userProxy = new Proxy(User, {
+  construct() {
+    const newUser = Reflect.construct(...arguments);
+    console.log(newUser);
+    UserList.push(newUser);
+    return newUser;
+  }
+});
+new userProxy("小卡车"); // User { name: '小卡车' }
+console.log(UserList); // [ User { name: '小卡车' } ]
