@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-09 11:49:57
- * @LastEditTime: 2020-10-09 17:59:13
+ * @LastEditTime: 2020-10-09 19:53:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\19.代理.js
@@ -138,3 +138,19 @@ const proxy11 = new Proxy(person4, {
   },
 });
 Object.defineProperty(proxy11, "name", { value: "小卡车" }); // defineProperty()...
+
+// 简易验证密码DEMO
+const msgTarget = {};
+const msgProxy = new Proxy(msgTarget, {
+  set(target, property, value, proxy) {
+    if (property === "password" && value.trim()) {
+      if (Array.from(value).map(item => Number(item)).every(i => String(i) !== "NaN" && Object.prototype.toString.call(i) === "[object Number]")) {
+        console.log("密码验证通过");
+      } else {
+        console.log("请重新输入密码!");
+      }
+    }
+  }
+});
+msgProxy.password = "abcd"; // 请重新输入密码!
+msgProxy.password = "123456"; // 密码验证通过
