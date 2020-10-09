@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-09 11:49:57
- * @LastEditTime: 2020-10-09 14:30:40
+ * @LastEditTime: 2020-10-09 17:59:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\19.代理.js
@@ -94,3 +94,47 @@ console.log(target7.foo); // bar
 console.log(proxy.foo); // bar
 revoke(); // 测销
 // console.log(proxy.foo); // TypeError
+
+// get()
+const person1 = {
+  name: "小卡车",
+};
+const proxy8 = new Proxy(person1, {
+  get(target, property, receiver) {
+    console.log("get()...");
+    return Reflect.get(...arguments);
+  },
+});
+proxy8.name; // get()...
+
+// set()
+const person2 = {
+  name: "xkc",
+};
+const proxy9 = new Proxy(person2, {
+  set(target, property, value, receiver) {
+    console.log("set()...");
+    return Reflect.set(...arguments);
+  },
+});
+proxy9.name = "小卡车"; // set()...
+
+// has()
+const person3 = {};
+const proxy10 = new Proxy(person3, {
+  has(target, property) {
+    console.log("has()...");
+    return Reflect.has(...arguments);
+  },
+});
+"name" in proxy10; // has()...
+
+// defineProperty()
+const person4 = {};
+const proxy11 = new Proxy(person4, {
+  defineProperty(target, property, descriptor) {
+    console.log("defineProperty()...");
+    return Reflect.defineProperty(...arguments);
+  },
+});
+Object.defineProperty(proxy11, "name", { value: "小卡车" }); // defineProperty()...
