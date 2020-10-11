@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 22:47:19
- * @LastEditTime: 2020-10-11 18:52:20
+ * @LastEditTime: 2020-10-11 19:58:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\22.异步.js
@@ -122,6 +122,20 @@ Error reject */
 let p4 = new Promise(() => {
   throw "ERROR 错误";
 });
-p4.catch(err => {
+p4.catch((err) => {
   console.log(err);
+});
+
+// 异常
+let p5 = new Promise((resolve, reject) => {
+  try {
+    throw Error("错误");
+  } catch (e) {
+    reject(e);
+  }
+});
+p5.catch((onrejected) => {
+  console.log("138", onrejected);
+}).finally(() => {
+  console.log("finally");
 });
