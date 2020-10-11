@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 22:47:19
- * @LastEditTime: 2020-10-11 15:51:05
+ * @LastEditTime: 2020-10-11 18:52:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\22.异步.js
@@ -125,4 +125,3 @@ let p4 = new Promise(() => {
 p4.catch(err => {
   console.log(err);
 });
-
