@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-11 20:15:47
- * @LastEditTime: 2020-10-11 23:38:48
+ * @LastEditTime: 2020-10-11 23:53:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\24.期约连锁与期约合成.js
@@ -107,3 +107,8 @@ let pp = new Promise((resolve, reject) => {
 pp.then(test1).then(res => {
   console.log(res); // 3
 });
+function test2(x) {
+  return x + 3;
+}
+let z = [test1, test2].reduce((promise, fn) => promise.then(fn), Promise.resolve(2));
+setTimeout(console.log, 0, z); // Promise { 7 }
