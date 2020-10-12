@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-12 13:51:45
- * @LastEditTime: 2020-10-12 14:05:10
+ * @LastEditTime: 2020-10-12 14:23:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\02.输出\27.await限制.js
@@ -26,3 +26,10 @@ function foo3() {
   console.log(sync()); // Promise { <pending> }
 }
 foo3();
+
+/*
+Promise { <pending> }
+foo1 - 1
+foo2 - 1
+foo3 - 1
+*/
