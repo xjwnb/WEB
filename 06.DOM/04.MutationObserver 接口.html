@@ -1,0 +1,160 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-14 20:31:14
+ * @LastEditTime: 2020-10-14 23:13:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \WEB\06.DOM\04.MutationObserver 接口.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // observe() 方法
+      let observer = new MutationObserver(() =>
+        console.log("xkc div -- attributes changed")
+      );
+      let xkcDiv = document.createElement("div");
+      document.body.appendChild(xkcDiv);
+      observer.observe(xkcDiv, { attributes: true });
+      xkcDiv.setAttribute("id", "xkc");
+      console.log("Synchronization task");
+      /**
+       * Synchronization task
+       * xkc div -- attributes changed
+       */
+
+      // 清空 body 内容
+      document.body.innerHTML = "";
+      // 第一个参数 MutationRecord
+      let observer1 = new MutationObserver((MutationRecord) =>
+        console.log(MutationRecord)
+      );
+      let xkcDiv1 = document.createElement("div");
+      document.body.appendChild(xkcDiv1);
+      observer1.observe(xkcDiv1, { attributes: true });
+      xkcDiv1.setAttribute("id", "xkc");
+      /**
+      [
+        {
+          addedNodes: NodeList []
+          attributeName: "id"
+          attributeNamespace: null
+          nextSibling: null
+          oldValue: null
+          previousSibling: null
+          removedNodes: NodeList []
+          target: div#xkc
+          type: "attributes"
+        }
+      ]
+       */
+
+      xkcDiv1.setAttribute("name", "xkc");
+      xkcDiv1.setAttribute("age", "20");
+      /*
+      [
+        {
+          addedNodes: NodeList []
+          attributeName: "id"
+          attributeNamespace: null
+          nextSibling: null
+          oldValue: null
+          previousSibling: null
+          removedNodes: NodeList []
+          target: div#xkc
+          type: "attributes"
+        },
+        {
+          addedNodes: NodeList []
+          attributeName: "name"
+          attributeNamespace: null
+          nextSibling: null
+          oldValue: null
+          previousSibling: null
+          removedNodes: NodeList []
+          target: div#xkc
+          type: "attributes"
+        },
+        {
+          addedNodes: NodeList []
+          attributeName: "age"
+          attributeNamespace: null
+          nextSibling: null
+          oldValue: null
+          previousSibling: null
+          removedNodes: NodeList []
+          target: div#xkc
+          type: "attributes"
+        }
+      ]
+      */
+
+      // 第二个参数 MutationObserver
+      // 清空 body 内容
+      document.body.innerHTML = "";
+      let observer2 = new MutationObserver(
+        (mutationRecord, mutationObserver) => {
+          console.log(mutationRecord, mutationObserver);
+        }
+      );
+      let xkcDiv2 = document.createElement("div");
+      document.body.appendChild(xkcDiv2);
+      observer2.observe(xkcDiv2, { attributes: true });
+      xkcDiv2.setAttribute("id", "xkc");
+      // [MutationRecord] MutationObserver
+
+      // disconnect() 方法
+      // 清空 body 内容
+      document.body.innerHTML = "";
+      let observer3 = new MutationObserver(() =>
+        console.log("xkc div -- attributes changed")
+      );
+      let xkcDiv3 = document.createElement("div");
+      document.body.appendChild(xkcDiv3);
+      observer3.observe(xkcDiv3, { attributes: true });
+      xkcDiv3.setAttribute("id", "xkc");
+      // 终止
+      observer3.disconnect();
+      xkcDiv3.setAttribute("name", "xkc");
+      // 无任何打印输出
+
+      //setTimeout()
+      // 清空 body 内容
+      document.body.innerHTML = "";
+      let observer4 = new MutationObserver((mutationRecord) =>
+        console.log("xkc div -- attributes changed", mutationRecord)
+      );
+      let xkcDiv4 = document.createElement("div");
+      document.body.appendChild(xkcDiv4);
+      observer4.observe(xkcDiv4, { attributes: true });
+      xkcDiv4.setAttribute("id", "xkc");
+      // setTimeout
+      setTimeout(() => {
+        // 终止
+        observer4.disconnect();
+        xkcDiv4.setAttribute("name", "xkc");
+      }, 0);
+      /*
+      [
+        {
+          addedNodes: NodeList []
+          attributeName: "id"
+          attributeNamespace: null
+          nextSibling: null
+          oldValue: null
+          previousSibling: null
+          removedNodes: NodeList []
+          target: div#xkc
+          type: "attributes"
+        }
+      ]
+      */
+    </script>
+  </body>
+</html>
