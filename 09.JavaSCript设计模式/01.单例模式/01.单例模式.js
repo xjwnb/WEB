@@ -101,3 +101,22 @@ document.getElementById("xkcLoginBtn").onclick = function () {
   let loginlayer = createLoginLayer();
   loginlayer.style.display = "block";
 };
+
+// 通用的惰性单例
+let createLoginLayer1 = function () {
+  div = document.createElement("div");
+  div.innerHTML = "我是登录浮窗";
+  div.style.display = "none";
+  document.body.appendChild(div);
+  return div;
+};
+let getSingle = function (fn) {
+  let result;
+  return function () {
+    return result || (result = fn.apply(this, arguments));
+  };
+};
+document.getElementById("xkcLoginBtn").onclick = function() {
+  let loginlayer = getSingle(createLoginLayer1);
+  loginlayer.style.display = "block";
+};
