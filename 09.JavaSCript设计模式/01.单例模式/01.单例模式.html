@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-22 15:11:00
+ * @LastEditTime: 2020-10-22 15:41:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \WEB\09.JavaSCript设计模式\01.单例模式\01.单例模式.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let CreateDiv = (function () {
+        let instance;
+        let CreateDiv = function (html) {
+          if (instance) {
+            console.log(instance);
+            return instance;
+          }
+          this.html = html;
+          this.init();
+          return (instance = this);
+        };
+        CreateDiv.prototype.init = function () {
+          let div = document.createElement("div");
+          div.innerHTML = this.html;
+          document.body.appendChild(div);
+        };
+        return CreateDiv;
+      })();
+      let createDiv1 = new CreateDiv("小卡车");
+      let createDiv2 = new CreateDiv("蜘蛛侠");
+      console.log(createDiv1 === createDiv2); // true
+
+      let CreateDiv1 = function (html) {
+        this.html = html;
+        this.init();
+      };
+      CreateDiv1.prototype.init = function () {
+        let div = document.createElement("div");
+        div.innerHTML = this.html;
+        document.body.appendChild(div);
+      };
+      // 代理类
+      let ProxySingletonCreateDiv = (function () {
+        let instance;
+        return function (html) {
+          if (!instance) {
+            instance = new CreateDiv1(html);
+          }
+          return instance;
+        };
+      })();
+      let proxyCreateDiv1 = new ProxySingletonCreateDiv("小卡车");
+      let proxyCreateDiv2 = new ProxySingletonCreateDiv("蜘蛛侠");
+      console.log(proxyCreateDiv1 === proxyCreateDiv2);
+    </script>
+  </body>
+</html>
