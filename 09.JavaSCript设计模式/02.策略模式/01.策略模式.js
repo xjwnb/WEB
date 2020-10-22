@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-22 17:49:41
- * @LastEditTime: 2020-10-22 19:57:36
+ * @LastEditTime: 2020-10-23 00:37:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\09.JavaSCript设计模式\02.策略模式\01.策略模式.js
@@ -91,3 +91,50 @@ let calculateBonus2 = function (level, salary) {
   return strategies[level](salary);
 };
 console.log(calculateBonus2("S", 20000)); // 80000
+
+// 表单验证
+// 策略对象
+let strategies = {
+  isNonEmpty: function (value, errorMsg) {
+    if (value === "") {
+      return errorMsg;
+    }
+  },
+  minLength: function (value, length, errorMsg) {
+    if (value.length < length) {
+      return errorMsg;
+    }
+  },
+  isMobile: function (value, errorMsg) {
+    if (!/(^1[3|5|8][0-9]{9}$)/.test(value)) {
+      return errorMsg;
+    }
+  },
+};
+// Validator 类
+let Validator = function () {
+  this.cache = [];
+};
+Validator.prototype.add = function (dom, rules) {
+  let self = this;
+  for (let i = 0, rule; (rule = rules[i++]); ) {
+    (function (rule) {
+      let strategyAry = rule.strategy.split(":");
+      let errorMsg = rule.errorMsg;
+      self.cache.push(function () {
+        let strategy = strategyAry.shift();
+        strategyAry.unshift(dom.value);
+        strategyAry.push(errorMsg);
+        return strategies[strategy].apply(dom, strategyAry);
+      });
+    })(rule);
+  }
+};
+Validator.prototype.start = function () {
+  for (let i = 0, validatorFunc; (validatorFunc = this.cache[i++]); ) {
+    let errorMsg = validatorFunc();
+    if (errorMsg) {
+      return errorMsg;
+    }
+  }
+};
