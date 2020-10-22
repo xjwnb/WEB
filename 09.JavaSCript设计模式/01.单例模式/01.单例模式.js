@@ -1,10 +1,3 @@
-# 单例模式
-
-## 实现单例模式
-
-用一个变量来标记当前是否已经为某个类型创建过对象，如果创建过则在下一次获取该类的实例时，直接返回之前创建的对象。
-
-```javascript
 let Singleton = function (name) {
   this.name = name;
 };
@@ -22,5 +15,3 @@ let sing1 = Singleton.getInstance("小卡车");
 let sing2 = Singleton.getInstance("蜘蛛侠");
 console.log(sing1 === sing2); // true
 console.log(sing2); // Singleton { name: '小卡车' }
-```
-
