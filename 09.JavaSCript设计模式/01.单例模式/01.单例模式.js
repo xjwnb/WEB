@@ -83,3 +83,21 @@ let ProxySingletonCreateDiv = (function () {
 let proxyCreateDiv1 = new ProxySingletonCreateDiv("小卡车");
 let proxyCreateDiv2 = new ProxySingletonCreateDiv("蜘蛛侠");
 console.log(proxyCreateDiv1 === proxyCreateDiv2);
+
+// 惰性单例
+let createLoginLayer = (function () {
+  let div;
+  return function () {
+    if (!div) {
+      div = document.createElement("div");
+      div.innerHTML = "我是登录浮窗";
+      div.style.display = "none";
+      document.body.appendChild(div);
+    }
+    return div;
+  };
+})();
+document.getElementById("xkcLoginBtn").onclick = function () {
+  let loginlayer = createLoginLayer();
+  loginlayer.style.display = "block";
+};
