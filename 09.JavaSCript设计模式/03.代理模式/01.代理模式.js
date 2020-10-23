@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-23 10:15:46
- * @LastEditTime: 2020-10-23 11:32:28
+ * @LastEditTime: 2020-10-23 11:48:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\09.JavaSCript设计模式\03.代理模式\01.代理模式.js
@@ -54,3 +54,33 @@ let proxyMult = (function () {
 })();
 console.log(proxyMult(1, 2, 3, 4, 5, 6)); // 720
 console.log(proxyMult(1, 2, 3, 4, 5, 6)); // 720
+
+// 利用高阶函数动态创建缓存代理
+let mults = function () {
+  let result = 1;
+  for (let i = 0, l = arguments.length; i < l; i++) {
+    result *= arguments[i];
+  }
+  return result;
+};
+let plus = function () {
+  let result = 0;
+  for (let i = 0, l = arguments.length; i < l; i++) {
+    result += arguments[i];
+  }
+  return result;
+};
+let createProxyFactory = function (fn) {
+  let cache = {};
+  return function () {
+    let args = Array.prototype.join.call(arguments, ",");
+    if (args in cache) {
+      return cache[args];
+    }
+    return (cache[args] = fn.apply(this, arguments));
+  };
+};
+let proxyMults = createProxyFactory(mults);
+let proxyPlus = createProxyFactory(plus);
+console.log(proxyMults(1, 2, 3, 4, 5, 6)); // 720
+console.log(proxyPlus(1, 2, 3, 4, 5, 6)); // 21
