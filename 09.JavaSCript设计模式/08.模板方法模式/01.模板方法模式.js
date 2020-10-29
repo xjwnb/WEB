@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-29 20:13:19
- * @LastEditTime: 2020-10-29 20:59:31
+ * @LastEditTime: 2020-10-29 21:08:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\09.JavaSCript设计模式\08.模板方法模式\01.模板方法模式.js
@@ -15,11 +15,17 @@ Beverage.prototype.boilWater = function () {
   console.log("将水煮沸");
 };
 // 冲泡方法（需被子类重写)
-Beverage.prototype.brew = function () {};
+Beverage.prototype.brew = function () {
+  throw new Error("子类必须重写 brew 方法");
+};
 // 倒进杯子方法（需被子类重写）
-Beverage.prototype.pourInCup = function () {};
+Beverage.prototype.pourInCup = function () {
+  throw new Error("子类必须重写 pourInCup 方法");
+};
 // 添加调味料方法（需被子类重写）
-Beverage.prototype.addCondiments = function () {};
+Beverage.prototype.addCondiments = function () {
+  throw new Error("子类必须重写 addCondiments 方法");
+};
 // 初始化方法
 Beverage.prototype.init = function () {
   this.boilWater();
