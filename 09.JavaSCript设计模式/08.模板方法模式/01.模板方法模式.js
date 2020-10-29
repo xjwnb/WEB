@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-29 20:13:19
- * @LastEditTime: 2020-10-29 21:08:50
+ * @LastEditTime: 2020-10-29 21:19:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WEB\09.JavaSCript设计模式\08.模板方法模式\01.模板方法模式.js
@@ -67,3 +67,63 @@ ForgetSonMilk.prototype.addCondiments = function () {
 };
 let forgetSonMilk = new ForgetSonMilk();
 forgetSonMilk.init();
+
+// 饮料
+let Beverage1 = function (param) {
+  let boilWater = function () {
+    console.log("把水煮沸");
+  };
+  let brew =
+    param.brew ||
+    function () {
+      throw new Error("必须传递 brew 方法");
+    };
+  let pourInCup =
+    param.pourInCup ||
+    function () {
+      throw new Error("必须传递 brew 方法");
+    };
+  let addCondiments =
+    param.addCondiments ||
+    function () {
+      throw new Error("必须传递 brew 方法");
+    };
+  let F = function () {};
+  F.prototype.init = function () {
+    boilWater();
+    brew();
+    pourInCup();
+    addCondiments();
+  };
+  return F;
+};
+// 卡布奇诺
+let Cappuccino1 = Beverage1({
+  brew: function () {
+    console.log("用沸水冲泡卡布奇诺");
+  },
+  pourInCup: function () {
+    console.log("把卡布奇诺倒进杯子");
+  },
+  addCondiments: function () {
+    console.log("加糖");
+  },
+});
+// 忘崽牛奶
+let ForgetSonMilk1 = Beverage1({
+  brew: function () {
+    console.log("用沸水冲泡忘崽牛奶");
+  },
+  pourInCup: function () {
+    console.log("把忘崽牛奶倒进杯子");
+  },
+  addCondiments: function () {
+    console.log("加糖加牛奶");
+  },
+});
+// 实现
+let cappuccino1 = new Cappuccino1();
+cappuccino1.init();
+
+let forgetSonMilk1 = new ForgetSonMilk1();
+forgetSonMilk1.init();
