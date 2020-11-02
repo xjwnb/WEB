@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind指令用法 -->
+        <a v-bind:href="url" >百度</a>
+
+        <!-- v-bind指令缩写形式 -->
+        <a :href="url">百度</a>
+        <input type="button" value="切换url" v-on:click='handle'>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                url: 'https://www.baidu.com'
+            },
+            methods: {
+                handle: function(){
+                    this.url = 'https://cn.vuejs.org/'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

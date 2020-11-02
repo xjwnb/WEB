@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script src="./js/axios.js"></script>
+    <script>
+        // get
+        axios.get('localhost:3000/data/axios?id=123')
+            .then(function (ret) {
+                console.log(ret.data)
+            })
+
+
+
+        axios.get('localhost:3000/data/axios/123')
+            .then(function (ret) {
+                console.log(ret.data)
+            })
+
+
+
+
+        axios.get('localhost:3000/data/axios', {
+            params: {
+                id: 777
+            }
+        }).then(function (ret) {
+            console.log(ret.data)
+        })
+
+        // delete
+        axios.delete('localhost:3000/data/axios', {
+            params: {
+                id: 23
+            }
+        }).then(function (ret) {
+            console.log(ret.data)
+        })
+
+        // post
+        // 1)
+        axios.post('localhost:3000/data/axios', {
+            uname: 'XJW',
+            pwd: 123
+        }).then(function (ret) {
+            console.log(ret.data)
+        })
+
+        // 2)
+        var params = new URLSearchParams();
+        params.append('uname', 'XJW');
+        params.append('pwd', '123');
+        axios.post('localhost:3000/data/axios', params)
+            .then(function (ret) {
+                console.log(ret.data)
+            })
+
+        // put
+        axios.put('localhost:3000/data/axios', {
+            uname: 'list',
+            pwd: 123
+        }).then(function (ret) {
+            console.log(ret.data)
+        })
+    </script>
+</body>
+
+</html>

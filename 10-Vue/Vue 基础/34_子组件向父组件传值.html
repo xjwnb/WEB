@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :style='{fontSize: fontSize + "px"}' v-cloak>{{ data }}</div>
+        <menu-item :parr='parr' @enlarge-text='handle'></menu-item>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        Vue.component('menu-item',{
+            props: ['parr'],
+            data: function() {
+                return {
+                    msg: 'Hello XJW'
+                }
+            },
+            template: `
+                        <div>
+                            <div>{{ msg }}</div>
+                            <button @click='$emit("enlarge-text")'>扩大父组件中字体大小</button>
+                        </div>`
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                data: 'I am Vue',
+                parr: 'Hello Vue',
+                fontSize: 7
+            },
+            methods: {
+                handle: function(){
+                    this.fontSize += 7
+                }   
+            },
+        })
+    </script>
+</body>
+</html>

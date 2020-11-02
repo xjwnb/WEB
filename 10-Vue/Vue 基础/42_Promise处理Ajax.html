@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function queryData(url) {
+            return new Promise(function (resolve, reject) {
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState != 4) return;
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        resolve(xhr.responseText);
+                    } else {
+                        reject("ERROR 500 服务器错误！");
+                    }
+                }
+                xhr.open('get', url);
+                xhr.send(null);
+            })
+        }
+
+        queryData("http://localhost:3000/data")
+            .then(function (data) {
+                console.log(data);
+            }, function (err) {
+                console.log(err);
+            });
+
+
+        // 调用多次Promise
+        // queryData('localhost:3000/data')
+        //     .then(function (data) {
+        //         console.log(data);
+        //         queryData('localhost:3000/data1');
+        //     })
+        //     .then(function (data) {
+        //         console.log(data);
+        //         queryData('localhost:3000/data2');
+        //     })
+        //     .then(function (data) {
+        //         console.log(data);
+        //     })
+
+    </script>
+</body>
+
+</html>

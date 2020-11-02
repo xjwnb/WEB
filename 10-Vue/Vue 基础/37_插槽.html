@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- vue2.6以前的插槽默认用法 -->
+    <div id="app">
+        <alert-text>你又成功整出一个BUG</alert-text>
+    
+
+
+    <!-- vue2.6以后的插槽默认方法 -->
+        <alert-new>你又成功整出一个BUG</alert-new>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        
+        // 2.6以前插槽默认用法
+        Vue.component('alert-text',{
+            template: `
+                <div>
+                    <strong>Error!</strong>
+                    <slot></slot>
+                </div>
+            `
+        })
+
+        // 2.6以后插槽默认用法
+        Vue.component('alert-new',{
+            template: `
+                <div>
+                    <strong>Error!</strong>
+                    <slot></slot>
+                </div>
+            `
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

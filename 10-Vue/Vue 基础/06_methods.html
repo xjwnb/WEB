@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="handle1" @click='handle1(1,2)'>
+        <input type="button" value="handle2" @click='handle2("XJWNB",$event)'>
+
+        <input type="button" value="handle3" @click="(e)=>handle3(e,'xjwnb')">
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            methods: {
+                handle1: function(a,b){
+                    console.log(a+b)
+                },
+                handle2: function(a,event){
+                    console.log(a)
+                    console.log(event.target.tagName)
+                },
+                handle3(e,x) {
+                    console.log(e.target.value)
+                    console.log(x)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

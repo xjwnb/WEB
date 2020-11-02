@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div :style='{fontSize: fontSize + "px"}'>{{ hai }}</div>
+        <menu-item :parr='parr' @enlarge-text='handle($event)'></menu-item>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        Vue.component('menu-item',{
+            props: ['parr'],
+            data: function(){
+                return {
+                    msg: 'XJWNB'
+                }
+            },
+            template: `<div>
+                            <h1>{{ msg }}</h1>
+                            <button @click="$emit('enlarge-text',7)">{{ msg }}扩大父组件字体大小</button>
+                       </div>`
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                parr: 'DL',
+                hai: 'I am Vue',
+                fontSize: 7
+            },
+            methods: {
+                handle: function(val){
+                    this.fontSize += val
+                }
+            },
+        })
+    </script>
+</body>
+</html>

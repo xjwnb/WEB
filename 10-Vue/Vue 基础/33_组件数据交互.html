@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <menu-item :title='ptitle' content='Hello Vue'></menu-item>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        Vue.component('menu-item',{
+            props: ['title','content'],
+            data: function(){
+                return {
+                    msg: '子组件的数据'
+                }
+            },
+            template: '<div>{{ msg + "=========" + title + "======" + content}}</div>'
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                ptitle: '动态绑定数据'
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <!-- vue 2.6以前插槽具名插槽用法 -->
+        <!-- 方法一 -->
+        <base-layout>
+            <h1 slot="header">头部信息：XJWNB</h1>
+            <p>主要内容</p>
+            <p>主要内容</p>
+            <h1 slot="footer">尾部信息：XJWNB</h1>
+        </base-layout>
+
+
+        <!-- 方法二 -->
+        <base-layout>
+            <template slot='header'>
+                <p>标题信息1</p>
+                <p>标题信息2</p>
+            </template>
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <template slot="footer">
+                <p>尾部信息1</p>
+                <p>尾部信息2</p>
+            </template>
+        </base-layout>
+
+        <hr/>
+        <!-- vue 2.6以后具名插槽用法 -->
+        <base-new>
+            <template v-slot:header>
+                <p>标题信息1</p>
+                <p>标题信息2</p>
+            </template>
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <template v-slot:footer>
+                <p>尾部信息1</p>
+                <p>尾部信息2</p>
+            </template>
+        </base-new>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        // vue 2.6 以前具名插槽
+        Vue.component('base-layout', {
+            template: `
+                <div>
+                    <div>
+                        <header>
+                            <slot name='header'></slot>
+                        </header>
+                    </div>
+                    <div>
+                        <main>
+                            <slot></slot>
+                        </main>
+                    </div>
+                    <div>
+                        <footer>
+                            <slot name='footer'></slot>
+                        </footer>
+                    </div>
+                </div>
+            `
+        })
+
+        // 2.6 以后具名插槽用法
+        Vue.component('base-new', {
+            template: `
+                <div>
+                    <div>
+                        <header>
+                            <slot name='header'></slot>
+                        </header>
+                    </div>
+                    <div>
+                        <main>
+                            <slot></slot>
+                        </main>
+                    </div>
+                    <div>
+                        <footer>
+                            <slot name='footer'></slot>
+                        </footer>
+                    </div>
+                </div>
+            `
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>

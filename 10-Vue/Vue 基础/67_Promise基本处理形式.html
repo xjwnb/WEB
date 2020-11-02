@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script src="./js/vue.js"></script>
+  <script>
+    // 成功放回数据的情况
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const a = 123
+        resolve(a)
+      })
+    }).then(a => {
+      console.log(a + 456)
+    })
+
+    // 放回数据失败
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const err = "你获取数据失败"
+        reject(err)
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  </script>
+</body>
+
+</html>

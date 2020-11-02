@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    const obj = {
+      aaa() {
+        setTimeout(() => {
+          console.log(this)
+        })
+
+        setTimeout(function () {
+          console.log(this)
+        })
+      }
+    }
+    obj.aaa()
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            number:<input type="text" v-model.number='number'>
+        </div>
+        <div>
+            trim:<input type="text" v-model.trim='trim'>
+        </div>
+        <div>
+            lazy:<input type="text" v-model.lazy='lazy'>
+            <span>{{ lazy }}</span>
+        </div>
+        <button v-on:click='handle'>按钮</button>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                number: '',
+                trim: '',
+                lazy: ''
+            },
+            methods: {
+                handle: function(){
+                    console.log(this.number)
+                    console.log(this.trim)
+                    console.log(this.lazy)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        .active {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+        .err {
+            background-color: green;
+        }
+        .test {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class='[activeClass,errClass,{test: isTest}]' v-cloak>测试</div>
+        <div v-bind:class='arrclass'></div>
+        <div v-bind:class='objClass'></div>
+        <button v-on:click='handle' v-cloak>切换</button>
+    </div>
+
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeClass: 'active',
+                errClass: 'err',
+                isTest: false,
+                arrclass: [
+                    'active',
+                    'err'
+                ],
+                objClass: {
+                    active: true,
+                    err: true
+                }
+            },
+            methods: {
+                handle: function(){
+                    this.isTest = !this.isTest
+                    this.objClass.err = !this.objClass.err
+                }
+            },
+        })
+    </script>
+</body>
+</html>

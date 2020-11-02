@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .grid {
+            margin: auto;
+            width: 500px;
+            text-align: center;
+        }
+
+        .grid table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grid th,
+        td {
+            padding: 10;
+            border: 1px dashed green;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .grid th {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="grid">
+            <div>
+                <h1>图书管理</h1>
+                <div class="book">
+                    <div>
+                        <label for="id">
+                            编号：
+                        </label>
+                        <input type="text" id="id" v-model='id' :disabled='flag'>
+                        <label for="name">
+                            名称：
+                        </label>
+                        <input type="text" id="name" v-model='name'>
+                        <button @click='handle'>提交</button>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :key='item.id' v-for="item in books">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.date }}</td>
+                        <td>
+                            <a href="" @click.prevent='toEdit(item.id)'>修改</a>
+                            <span>|</span>
+                            <a href="" @click.prevent='deleteBook(item.id)'>删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                flag: false,
+                books: [{
+                    id: 1,
+                    name: '三国演义',
+                    date: '2020-1-17'
+                }, {
+                    id: 2,
+                    name: '水浒传',
+                    date: '2020-1-17'
+                }, {
+                    id: 3,
+                    name: '红楼梦',
+                    date: '2020-1-17'
+                }]
+            },
+            methods: {
+                handle: function () {
+                    if (this.flag) {
+                        this.books.some((item)=>{
+                            if(item.id == this.id){
+                                item.name = this.name
+                            }
+                        })
+                        this.flag = false 
+                    } else {
+                        var book = {}
+                        book.id = this.id
+                        book.name = this.name
+                        book.date = ''
+                        this.books.push(book)
+
+                        this.id = ''
+                        this.name = ''
+                    }
+
+                    this.id = ''
+                    this.name = ''
+
+                },
+                toEdit: function (id) {
+                    this.flag = true
+                    var book = this.books.filter(function (item) {
+                        return item.id == id
+                    })
+
+                    this.name = book[0].name
+                    this.id = book[0].id
+
+                },
+                deleteBook: function(id){
+                    var index = this.books.findIndex(function(item){
+                        return item.id == id
+                    })
+                    
+                    this.books.splice(index,1)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

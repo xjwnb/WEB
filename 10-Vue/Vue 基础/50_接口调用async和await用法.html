@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="./js/axios.js"></script>
+    <script>
+
+        axios.defults.baseURL = 'http://localhost:3000'
+        async function queryData() {
+            var ret = await axios.get('/data');
+            return ret.data;
+        }
+        queryData().then(function (data) {
+            console.log(data);
+        })
+    </script>
+</body>
+
+</html>

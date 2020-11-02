@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <!-- vue 2.6 以前的作用域插槽 -->
+        <fruit-list :list='list'>
+            <template slot-scope='slotProps'>
+                <strong>{{ slotProps.info.name }}</strong>
+            </template>
+        </fruit-list>
+
+        <hr/>
+
+        <!-- vue 2.6 以后的作用域插槽 -->
+        <fruit-new :list-new='list'>
+            <template v-slot:test='slotProps'>
+                <strong>{{ slotProps.con.name }}</strong>
+            </template>
+        </fruit-new>
+
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        Vue.component('fruit-list',{
+            props: ['list'],
+            template: `
+                <div>
+                    <li :key='item.id' v-for='item in list'>
+                        <slot :info='item'>{{ item.name }}</slot>
+                    </li>
+                </div>
+            `
+        })
+
+
+        Vue.component('fruit-new',{
+            props: ['listNew'],
+            template: `
+                <div>
+                    <li :key='item.id' v-for='item in listNew'>
+                        <slot name='test' :con='item'>{{ item.name }}</slot>
+                    </li>
+                </div>
+            `
+        })
+
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: [{
+                    id: 1,
+                    name: 'apple'
+                },{
+                    id: 2,
+                    name: 'pear'
+                },{
+                    id: 3,
+                    name: 'banana'
+                }]
+            }
+        })
+    </script>
+
+</body>
+</html>

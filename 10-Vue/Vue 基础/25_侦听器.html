@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <span>侦听数据一：</span>
+            <input type="text" v-model="firstData">
+        </div>
+        <div>
+            <span>侦听数据二：</span>
+            <input type="text" v-model="lastData">
+        </div>
+        <div v-cloak>{{ fullName }}</div>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                firstData: '',
+                lastData: '',
+                fullName: ''
+            },
+            watch: {
+                firstData: function(val){
+                    this.fullName = val + ' ' + this.lastData
+                },
+                lastData: function(val){
+                    this.fullName = this.firstData + ' ' + val
+                }
+            },
+        })
+    </script>
+</body>
+</html>

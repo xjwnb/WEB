@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <hello-xjw></hello-xjw>
+        <hello-world></hello-world>
+        <hello-vue></hello-vue>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        
+        var HelloXjw= {
+            data: function(){
+                return {
+                    msg: 'XJWNB'
+                }
+            },
+            template: '<h1>{{ msg }}</h1>'
+        }
+        var  HelloWorld= {
+            data: function(){
+                return {
+                    msg: 'HelloWorld'
+                }
+            },
+            template: '<h1>{{ msg }}</h1>'
+        }
+        var HelloVue = {
+            data: function(){
+                return {
+                    msg: 'HelloVue'
+                }
+            },
+            template: '<h1>{{ msg }}</h1>'
+        }
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            components: {
+                'hello-xjw': HelloXjw,
+                'hello-world': HelloWorld,
+                'hello-vue': HelloVue
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <a href="#/zhuye">主页</a>
+        <a href="#/dadaima">打代码</a>
+        <a href="#/cahngge">唱歌</a>
+        <a href="#/dayouxi">打游戏</a>
+
+        <component :is="comName"></component>
+
+    </div>
+
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        // 各个组件并设置模板
+        var zhuye = {
+            template: `<h1>主页</h1>`
+        }
+        var dadaima = {
+            template: `<h1>打代码</h1>`
+        }
+        var cahngge = {
+            template: `<h1>唱歌</h1>`
+        }
+        var dayouxi = {
+            template: `<h1>打游戏</h1>`
+        }
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                comName: 'zhuye'
+            },
+            components: {
+                zhuye,
+                dadaima,
+                cahngge,
+                dayouxi
+            }
+        })
+
+        window.onhashchange = function () {
+            console.log(location.hash)
+            switch (location.hash.slice(1)) {
+                case '/zhuye':
+                    vm.comName = 'zhuye'
+                    break
+                case '/dadaima':
+                    vm.comName = 'dadaima'
+                    break
+                case '/cahngge':
+                    vm.comName = 'cahngge'
+                    break
+                case '/dayouxi':
+                    vm.comName = 'dayouxi'
+                    break
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

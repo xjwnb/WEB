@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // get 方式
+        fetch('localhost:3000/data?id=1', {
+            method: 'get'
+        })
+            .then(function (data) {
+                return data.text();
+            })
+            .then(function (data) {
+                console.log(data)
+            })
+
+        // delete 方式
+        fetch('localhost:3000/data?id=2', {
+            method: 'delete'
+        })
+            .then(function (data) {
+                return data.text();
+            })
+            .then(function (data) {
+                console.log(data)
+            })
+
+        // Post 方式 
+        // 1)
+        fetch('localhost:3000/data?id=3', {
+            method: 'post',
+            body: 'uname=list&pwd=123',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+            .then(function (data) {
+                return data.text();
+            })
+            .then(function (data) {
+                console.log(data)
+            })
+        
+
+        // 2)
+        fetch('localhost:3000/data?id=4', {
+            method: 'post',
+            body: JSON.stringify({
+                uname='XJW',
+                pwd: '123'
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(function (data) {
+                return data.text();
+            })
+            .then(function (data) {
+                console.log(data)
+            })
+
+        // put 方式
+        fetch('localhost:3000/data?id=5', {
+            method: 'put',
+            body: JSON.stringify({
+                uname: 'XJW',
+                pwd: '123'
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(function (data) {
+                return data.text();
+            })
+            .then(function (data) {
+                console.log(data)
+            })
+    </script>
+
+</body>
+
+</html>

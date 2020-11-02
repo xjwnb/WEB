@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <menu-item title='父组件的数据'></menu-item>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        Vue.component('menu-item',{
+            props: ['title'],
+            data: function(){
+                return {
+                    msg: '子组件本身的数据'
+                }
+            },
+            template: '<h1>{{ msg + "========" + title }}'
+        })
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+            }
+        })
+    </script>
+</body>
+</html>

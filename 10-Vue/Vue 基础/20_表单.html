@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <div>
+                <label for="">姓名：</label>
+                <input type="text" value="" v-model='uname'>
+            </div>
+            <div>
+                <label for="">性别：</label>
+                <input type="radio" name="gender" id="" value="1" v-model='gender'>男
+                <input type="radio" name="gender" id="" value="2" v-model='gender'>女
+            </div>
+            <div>
+                <label for="">爱好：</label>
+                <input type="checkbox" name="hobbies" id="" value="1" v-model='hobbies'>唱歌
+                <input type="checkbox" name="hobbies" id="" value="2" v-model='hobbies'>打代码
+                <input type="checkbox" name="hobbies" id="" value="3" v-model='hobbies'>打游戏
+            </div>
+            <div>
+                <label for="">职业：</label>
+                <select name="" id="" v-model='occaption'>
+                    <option value="">请选择职业</option>
+                    <option value="1">教师</option>
+                    <option value="2">程序员</option>
+                    <option value="3">律师</option>
+                </select>
+            </div>
+            <div>
+                <label for="">个人简介：</label>
+                <textarea name="" id="" cols="30" rows="10" v-model='content'></textarea>
+            </div>
+            <input type="submit" v-on:click.prevent='handle'>
+        </form>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                uname: 'xjwnb',
+                gender: 1,
+                hobbies: [1,2],
+                occaption:2,
+                content: '大帅哥'
+            },
+            methods: {
+                handle: function(){
+                    console.log(this.uname)
+                    console.log(this.gender)
+                    console.log(this.hobbies)
+                    console.log(this.occaption)
+                    console.log(this.content)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

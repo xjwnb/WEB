@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <router-link to="/user/1">打代码</router-link>
+        <router-link to="/user/2">唱歌</router-link>
+        <router-link :to="{name:'user',params:{id:3}}">打游戏</router-link>
+        <router-link to="/register">Register</router-link>
+
+        <router-view></router-view>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue-router.js"></script>
+
+    <script>
+
+        var User = {
+            props: ['id', 'uname', 'age'],
+            template: `<h1>User{{ id + " ====  " +uname+"===  "+age}}组件</h1>`
+        }
+
+        var Register = {
+            template: `<h1>Register</h1>`
+        }
+
+
+        const router = new VueRouter({
+            routes: [
+                { path: '/', redirect: '/user' },
+                {
+                    name: 'user',
+                    path: '/user/:id', component: User, props: route => ({
+                        id: route.params.id, uname: 'XJW', age: 18
+                    })
+                },
+                { path: '/register', component: Register }
+            ]
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            router
+        })
+
+    </script>
+
+</body>
+
+</html>

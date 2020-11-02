@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script src="./js/vue.js"></script>
+
+  <script>
+    // 1. filter函数
+    const nums = [10, 20, 11, 234, 146, 63, 62]
+    let newNums = nums.filter((item) => {
+      return item < 100
+    })
+    console.log(newNums)
+
+    // 2. map函数
+    let new2Nums = newNums.map((n) => {
+      return n * 2
+    })
+    console.log(new2Nums)
+
+    // 3, reduce函数
+    // reduce作用对数组中所有的内容进行汇总
+    let total = new2Nums.reduce((preValue, n) => {
+      return preValue + n
+    }, 0)
+  </script>
+</body>
+
+</html>

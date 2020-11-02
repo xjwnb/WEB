@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var promise = new Promise(function (resolve, reject) {
+            var flag = true;
+            if (flag) {
+                console.log("XJWNB");
+            } else {
+                console.log("ERROR");
+            }
+        });
+        promise.then(function (data) {
+            console.log(data);
+        }, function (err) {
+            console.log(err)
+        })
+    </script>
+</body>
+
+</html>

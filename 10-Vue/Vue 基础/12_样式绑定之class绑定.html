@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .test {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class='{active: isActive,test: isTest}'></div>
+        <input type="button" value="切换" v-on:click='handle'>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                isTest: false
+            },
+            methods: {
+                handle: function(){
+                    this.isActive = !this.isActive
+                    this.isTest = !this.isTest
+                }
+            },
+        })
+    </script>
+</body>
+</html>
