@@ -1,0 +1,342 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'D:\\NodeJS\\node.exe',
+1 verbose cli   'C:\\Users\\game\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   'webpack',
+1 verbose cli   'webpack-cli',
+1 verbose cli   '-D'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v12.13.1
+4 verbose npm-session 70587d5eccdb975b
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 304 https://registry.npm.taobao.org/webpack-cli 3139ms (from cache)
+8 silly pacote tag manifest for webpack-cli@latest fetched in 3148ms
+9 http fetch GET 304 https://registry.npm.taobao.org/webpack 3682ms (from cache)
+10 silly pacote tag manifest for webpack@latest fetched in 3715ms
+11 timing stage:loadCurrentTree Completed in 3745ms
+12 silly install loadIdealTree
+13 silly install cloneCurrentTreeToIdealTree
+14 timing stage:loadIdealTree:cloneCurrentTree Completed in 0ms
+15 silly install loadShrinkwrap
+16 timing stage:loadIdealTree:loadShrinkwrap Completed in 0ms
+17 silly install loadAllDepsIntoIdealTree
+18 silly resolveWithNewModule webpack-cli@4.2.0 checking installable status
+19 silly resolveWithNewModule webpack@5.4.0 checking installable status
+20 http fetch GET 200 https://registry.npm.taobao.org/@types%2festree 836ms
+21 http fetch GET 200 https://registry.npm.taobao.org/@types%2feslint-scope 841ms
+22 silly pacote range manifest for @types/estree@^0.0.45 fetched in 846ms
+23 silly resolveWithNewModule @types/estree@0.0.45 checking installable status
+24 silly pacote range manifest for @types/eslint-scope@^3.7.0 fetched in 857ms
+25 silly resolveWithNewModule @types/eslint-scope@3.7.0 checking installable status
+26 http fetch GET 200 https://registry.npm.taobao.org/events 1561ms
+27 silly pacote range manifest for events@^3.2.0 fetched in 1571ms
+28 silly resolveWithNewModule events@3.2.0 checking installable status
+29 http fetch GET 200 https://registry.npm.taobao.org/eslint-scope 1774ms
+30 silly pacote range manifest for eslint-scope@^5.1.1 fetched in 1794ms
+31 silly resolveWithNewModule eslint-scope@5.1.1 checking installable status
+32 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-module-context 3354ms
+33 silly pacote version manifest for @webassemblyjs/helper-module-context@1.9.0 fetched in 3371ms
+34 silly resolveWithNewModule @webassemblyjs/helper-module-context@1.9.0 checking installable status
+35 http fetch GET 200 https://registry.npm.taobao.org/browserslist 4725ms
+36 silly pacote range manifest for browserslist@^4.14.5 fetched in 4735ms
+37 silly resolveWithNewModule browserslist@4.14.7 checking installable status
+38 http fetch GET 200 https://registry.npm.taobao.org/acorn 10906ms
+39 silly pacote range manifest for acorn@^8.0.4 fetched in 10931ms
+40 silly resolveWithNewModule acorn@8.0.4 checking installable status
+41 http fetch GET 200 https://registry.npm.taobao.org/glob-to-regexp 12014ms
+42 silly pacote range manifest for glob-to-regexp@^0.4.1 fetched in 12025ms
+43 silly resolveWithNewModule glob-to-regexp@0.4.1 checking installable status
+44 http fetch GET 200 https://registry.npm.taobao.org/graceful-fs 13714ms
+45 silly pacote range manifest for graceful-fs@^4.2.4 fetched in 13721ms
+46 silly resolveWithNewModule graceful-fs@4.2.4 checking installable status
+47 http fetch GET 200 https://registry.npm.taobao.org/chrome-trace-event 19284ms
+48 silly pacote range manifest for chrome-trace-event@^1.0.2 fetched in 19297ms
+49 silly resolveWithNewModule chrome-trace-event@1.0.2 checking installable status
+50 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fast 20344ms
+51 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fwasm-edit 20388ms
+52 silly pacote version manifest for @webassemblyjs/ast@1.9.0 fetched in 20400ms
+53 silly resolveWithNewModule @webassemblyjs/ast@1.9.0 checking installable status
+54 silly pacote version manifest for @webassemblyjs/wasm-edit@1.9.0 fetched in 20417ms
+55 silly resolveWithNewModule @webassemblyjs/wasm-edit@1.9.0 checking installable status
+56 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fwasm-parser 21413ms
+57 silly pacote version manifest for @webassemblyjs/wasm-parser@1.9.0 fetched in 21436ms
+58 silly resolveWithNewModule @webassemblyjs/wasm-parser@1.9.0 checking installable status
+59 http fetch GET 200 https://registry.npm.taobao.org/neo-async 11353ms
+60 silly pacote range manifest for neo-async@^2.6.2 fetched in 11364ms
+61 silly resolveWithNewModule neo-async@2.6.2 checking installable status
+62 http fetch GET 200 https://registry.npm.taobao.org/pkg-dir 10101ms
+63 silly pacote range manifest for pkg-dir@^4.2.0 fetched in 10121ms
+64 silly resolveWithNewModule pkg-dir@4.2.0 checking installable status
+65 http fetch GET 200 https://registry.npm.taobao.org/tapable 8941ms
+66 http fetch GET 200 https://registry.npm.taobao.org/terser-webpack-plugin 8925ms
+67 silly pacote range manifest for tapable@^2.0.0 fetched in 8951ms
+68 silly resolveWithNewModule tapable@2.1.1 checking installable status
+69 silly pacote range manifest for terser-webpack-plugin@^5.0.3 fetched in 8937ms
+70 silly resolveWithNewModule terser-webpack-plugin@5.0.3 checking installable status
+71 http fetch GET 200 https://registry.npm.taobao.org/loader-runner 25451ms attempt #2
+72 silly pacote range manifest for loader-runner@^4.1.0 fetched in 25464ms
+73 silly resolveWithNewModule loader-runner@4.1.0 checking installable status
+74 http fetch GET 200 https://registry.npm.taobao.org/schema-utils 11054ms
+75 silly pacote range manifest for schema-utils@^3.0.0 fetched in 11060ms
+76 silly resolveWithNewModule schema-utils@3.0.0 checking installable status
+77 http fetch GET 200 https://registry.npm.taobao.org/watchpack 9845ms
+78 silly pacote range manifest for watchpack@^2.0.0 fetched in 9856ms
+79 silly resolveWithNewModule watchpack@2.0.1 checking installable status
+80 http fetch GET 200 https://registry.npm.taobao.org/mime-types 23108ms attempt #2
+81 silly pacote range manifest for mime-types@^2.1.27 fetched in 23123ms
+82 silly resolveWithNewModule mime-types@2.1.27 checking installable status
+83 http fetch GET 200 https://registry.npm.taobao.org/enhanced-resolve 41203ms
+84 silly pacote range manifest for enhanced-resolve@^5.3.1 fetched in 41238ms
+85 silly resolveWithNewModule enhanced-resolve@5.3.1 checking installable status
+86 http fetch GET 200 https://registry.npm.taobao.org/json-parse-better-errors 42592ms attempt #2
+87 silly pacote range manifest for json-parse-better-errors@^1.0.2 fetched in 42601ms
+88 silly resolveWithNewModule json-parse-better-errors@1.0.2 checking installable status
+89 http fetch GET 200 https://registry.npm.taobao.org/webpack-sources 20931ms
+90 silly pacote range manifest for webpack-sources@^2.1.1 fetched in 20938ms
+91 silly resolveWithNewModule webpack-sources@2.2.0 checking installable status
+92 http fetch GET 200 https://registry.npm.taobao.org/@types%2feslint 401ms
+93 silly pacote range manifest for @types/eslint@* fetched in 407ms
+94 silly resolveWithNewModule @types/eslint@7.2.4 checking installable status
+95 http fetch GET 200 https://registry.npm.taobao.org/@types%2fjson-schema 347ms
+96 silly pacote range manifest for @types/json-schema@* fetched in 353ms
+97 silly resolveWithNewModule @types/json-schema@7.0.6 checking installable status
+98 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-wasm-bytecode 750ms
+99 silly pacote version manifest for @webassemblyjs/helper-wasm-bytecode@1.9.0 fetched in 756ms
+100 silly resolveWithNewModule @webassemblyjs/helper-wasm-bytecode@1.9.0 checking installable status
+101 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fwast-parser 3774ms
+102 silly pacote version manifest for @webassemblyjs/wast-parser@1.9.0 fetched in 3783ms
+103 silly resolveWithNewModule @webassemblyjs/wast-parser@1.9.0 checking installable status
+104 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2ffloating-point-hex-parser 1344ms
+105 silly pacote version manifest for @webassemblyjs/floating-point-hex-parser@1.9.0 fetched in 1361ms
+106 silly resolveWithNewModule @webassemblyjs/floating-point-hex-parser@1.9.0 checking installable status
+107 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-api-error 1942ms
+108 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-fsm 1943ms
+109 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-code-frame 1943ms
+110 silly pacote version manifest for @webassemblyjs/helper-api-error@1.9.0 fetched in 1954ms
+111 silly resolveWithNewModule @webassemblyjs/helper-api-error@1.9.0 checking installable status
+112 silly pacote version manifest for @webassemblyjs/helper-fsm@1.9.0 fetched in 1953ms
+113 silly resolveWithNewModule @webassemblyjs/helper-fsm@1.9.0 checking installable status
+114 silly pacote version manifest for @webassemblyjs/helper-code-frame@1.9.0 fetched in 1955ms
+115 silly resolveWithNewModule @webassemblyjs/helper-code-frame@1.9.0 checking installable status
+116 http fetch GET 200 https://registry.npm.taobao.org/@xtuc%2flong 2238ms
+117 silly pacote version manifest for @xtuc/long@4.2.2 fetched in 2245ms
+118 silly resolveWithNewModule @xtuc/long@4.2.2 checking installable status
+119 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fwast-printer 965ms
+120 silly pacote version manifest for @webassemblyjs/wast-printer@1.9.0 fetched in 973ms
+121 silly resolveWithNewModule @webassemblyjs/wast-printer@1.9.0 checking installable status
+122 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-buffer 873ms
+123 silly pacote version manifest for @webassemblyjs/helper-buffer@1.9.0 fetched in 888ms
+124 silly resolveWithNewModule @webassemblyjs/helper-buffer@1.9.0 checking installable status
+125 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fwasm-opt 1286ms
+126 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fhelper-wasm-section 1298ms
+127 silly pacote version manifest for @webassemblyjs/wasm-opt@1.9.0 fetched in 1305ms
+128 silly resolveWithNewModule @webassemblyjs/wasm-opt@1.9.0 checking installable status
+129 silly pacote version manifest for @webassemblyjs/helper-wasm-section@1.9.0 fetched in 1311ms
+130 silly resolveWithNewModule @webassemblyjs/helper-wasm-section@1.9.0 checking installable status
+131 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fwasm-gen 2228ms
+132 silly pacote version manifest for @webassemblyjs/wasm-gen@1.9.0 fetched in 2239ms
+133 silly resolveWithNewModule @webassemblyjs/wasm-gen@1.9.0 checking installable status
+134 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fieee754 580ms
+135 silly pacote version manifest for @webassemblyjs/ieee754@1.9.0 fetched in 619ms
+136 silly resolveWithNewModule @webassemblyjs/ieee754@1.9.0 checking installable status
+137 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2futf8 667ms
+138 http fetch GET 200 https://registry.npm.taobao.org/@webassemblyjs%2fleb128 669ms
+139 silly pacote version manifest for @webassemblyjs/utf8@1.9.0 fetched in 683ms
+140 silly resolveWithNewModule @webassemblyjs/utf8@1.9.0 checking installable status
+141 silly pacote version manifest for @webassemblyjs/leb128@1.9.0 fetched in 684ms
+142 silly resolveWithNewModule @webassemblyjs/leb128@1.9.0 checking installable status
+143 http fetch GET 200 https://registry.npm.taobao.org/@xtuc%2fieee754 1683ms
+144 silly pacote range manifest for @xtuc/ieee754@^1.2.0 fetched in 1699ms
+145 silly resolveWithNewModule @xtuc/ieee754@1.2.0 checking installable status
+146 http fetch GET 200 https://registry.npm.taobao.org/colorette 1451ms
+147 silly pacote range manifest for colorette@^1.2.1 fetched in 1473ms
+148 silly resolveWithNewModule colorette@1.2.1 checking installable status
+149 http fetch GET 200 https://registry.npm.taobao.org/escalade 1472ms
+150 http fetch GET 200 https://registry.npm.taobao.org/node-releases 1491ms
+151 silly pacote range manifest for escalade@^3.1.1 fetched in 1524ms
+152 silly resolveWithNewModule escalade@3.1.1 checking installable status
+153 silly pacote range manifest for node-releases@^1.1.66 fetched in 1525ms
+154 silly resolveWithNewModule node-releases@1.1.66 checking installable status
+155 http fetch GET 200 https://registry.npm.taobao.org/electron-to-chromium 5405ms
+156 silly pacote range manifest for electron-to-chromium@^1.3.591 fetched in 5451ms
+157 silly resolveWithNewModule electron-to-chromium@1.3.596 checking installable status
+158 http fetch GET 200 https://registry.npm.taobao.org/caniuse-lite 7704ms
+159 silly pacote range manifest for caniuse-lite@^1.0.30001157 fetched in 7736ms
+160 silly resolveWithNewModule caniuse-lite@1.0.30001158 checking installable status
+161 http fetch GET 200 https://registry.npm.taobao.org/tslib 2565ms
+162 silly pacote range manifest for tslib@^1.9.0 fetched in 2586ms
+163 silly resolveWithNewModule tslib@1.14.1 checking installable status
+164 http fetch GET 200 https://registry.npm.taobao.org/estraverse 7980ms
+165 silly pacote range manifest for estraverse@^4.1.1 fetched in 7990ms
+166 silly resolveWithNewModule estraverse@4.3.0 checking installable status
+167 http fetch GET 200 https://registry.npm.taobao.org/esrecurse 8041ms
+168 silly pacote range manifest for esrecurse@^4.3.0 fetched in 8056ms
+169 silly resolveWithNewModule esrecurse@4.3.0 checking installable status
+170 silly pacote range manifest for estraverse@^5.2.0 fetched in 13ms
+171 silly resolveWithNewModule estraverse@5.2.0 checking installable status
+172 http fetch GET 200 https://registry.npm.taobao.org/mime-db 7326ms
+173 silly pacote version manifest for mime-db@1.44.0 fetched in 7346ms
+174 silly resolveWithNewModule mime-db@1.44.0 checking installable status
+175 http fetch GET 200 https://registry.npm.taobao.org/find-up 7648ms
+176 silly pacote range manifest for find-up@^4.0.0 fetched in 7656ms
+177 silly resolveWithNewModule find-up@4.1.0 checking installable status
+178 http fetch GET 200 https://registry.npm.taobao.org/path-exists 57965ms attempt #2
+179 silly pacote range manifest for path-exists@^4.0.0 fetched in 57982ms
+180 silly resolveWithNewModule path-exists@4.0.0 checking installable status
+181 http fetch GET 200 https://registry.npm.taobao.org/locate-path 58079ms attempt #2
+182 silly pacote range manifest for locate-path@^5.0.0 fetched in 58099ms
+183 silly resolveWithNewModule locate-path@5.0.0 checking installable status
+184 http fetch GET 200 https://registry.npm.taobao.org/p-locate 147ms
+185 silly pacote range manifest for p-locate@^4.1.0 fetched in 167ms
+186 silly resolveWithNewModule p-locate@4.1.0 checking installable status
+187 http fetch GET 200 https://registry.npm.taobao.org/p-limit 52ms
+188 silly pacote range manifest for p-limit@^2.2.0 fetched in 66ms
+189 silly resolveWithNewModule p-limit@2.3.0 checking installable status
+190 http fetch GET 200 https://registry.npm.taobao.org/p-try 214ms
+191 silly pacote range manifest for p-try@^2.0.0 fetched in 261ms
+192 silly resolveWithNewModule p-try@2.2.0 checking installable status
+193 http fetch GET 200 https://registry.npm.taobao.org/ajv-keywords 1303ms
+194 silly pacote range manifest for ajv-keywords@^3.5.2 fetched in 1315ms
+195 silly resolveWithNewModule ajv-keywords@3.5.2 checking installable status
+196 http fetch GET 200 https://registry.npm.taobao.org/ajv 3788ms
+197 silly pacote range manifest for ajv@^6.12.5 fetched in 4826ms
+198 silly resolveWithNewModule ajv@6.12.6 checking installable status
+199 http fetch GET 200 https://registry.npm.taobao.org/fast-deep-equal 6703ms
+200 http fetch GET 200 https://registry.npm.taobao.org/fast-json-stable-stringify 6710ms
+201 silly pacote range manifest for fast-deep-equal@^3.1.1 fetched in 6711ms
+202 silly resolveWithNewModule fast-deep-equal@3.1.3 checking installable status
+203 silly pacote range manifest for fast-json-stable-stringify@^2.0.0 fetched in 6715ms
+204 silly resolveWithNewModule fast-json-stable-stringify@2.1.0 checking installable status
+205 http fetch GET 200 https://registry.npm.taobao.org/uri-js 7246ms
+206 silly pacote range manifest for uri-js@^4.2.2 fetched in 7260ms
+207 silly resolveWithNewModule uri-js@4.4.0 checking installable status
+208 http fetch GET 200 https://registry.npm.taobao.org/json-schema-traverse 7277ms
+209 silly pacote range manifest for json-schema-traverse@^0.4.1 fetched in 7294ms
+210 silly resolveWithNewModule json-schema-traverse@0.4.1 checking installable status
+211 http fetch GET 200 https://registry.npm.taobao.org/punycode 2035ms
+212 silly pacote range manifest for punycode@^2.1.0 fetched in 2041ms
+213 silly resolveWithNewModule punycode@2.1.1 checking installable status
+214 silly pacote range manifest for p-limit@^3.0.2 fetched in 13ms
+215 silly resolveWithNewModule p-limit@3.0.2 checking installable status
+216 http fetch GET 200 https://registry.npm.taobao.org/serialize-javascript 1368ms
+217 http fetch GET 200 https://registry.npm.taobao.org/source-map 1370ms
+218 silly pacote range manifest for serialize-javascript@^5.0.1 fetched in 1388ms
+219 silly resolveWithNewModule serialize-javascript@5.0.1 checking installable status
+220 silly pacote range manifest for source-map@^0.6.1 fetched in 1396ms
+221 silly resolveWithNewModule source-map@0.6.1 checking installable status
+222 http fetch GET 200 https://registry.npm.taobao.org/jest-worker 1535ms
+223 http fetch GET 200 https://registry.npm.taobao.org/terser 1546ms
+224 silly pacote range manifest for jest-worker@^26.6.1 fetched in 1568ms
+225 silly resolveWithNewModule jest-worker@26.6.2 checking installable status
+226 silly pacote range manifest for terser@^5.3.8 fetched in 1583ms
+227 silly resolveWithNewModule terser@5.3.8 checking installable status
+228 http fetch GET 200 https://registry.npm.taobao.org/merge-stream 705ms
+229 http fetch GET 200 https://registry.npm.taobao.org/supports-color 705ms
+230 silly pacote range manifest for merge-stream@^2.0.0 fetched in 714ms
+231 silly resolveWithNewModule merge-stream@2.0.0 checking installable status
+232 silly pacote range manifest for supports-color@^7.0.0 fetched in 712ms
+233 silly resolveWithNewModule supports-color@7.2.0 checking installable status
+234 http fetch GET 200 https://registry.npm.taobao.org/@types%2fnode 11836ms
+235 silly fetchPackageMetaData error for @types/node@* Unexpected end of JSON input while parsing near '...2f2f956cae4828f825589'
+236 timing stage:rollbackFailedOptional Completed in 1ms
+237 timing stage:runTopLevelLifecycles Completed in 182635ms
+238 silly saveTree webpack_learn@1.0.0
+238 silly saveTree +-- webpack-cli@4.2.0
+238 silly saveTree | `-- colorette@1.2.1
+238 silly saveTree `-- webpack@5.4.0
+238 silly saveTree   +-- @types/eslint-scope@3.7.0
+238 silly saveTree   | +-- @types/eslint@7.2.4
+238 silly saveTree   | | +-- @types/estree@0.0.45
+238 silly saveTree   | | `-- @types/json-schema@7.0.6
+238 silly saveTree   | `-- @types/estree@0.0.45
+238 silly saveTree   +-- @types/estree@0.0.45
+238 silly saveTree   +-- @webassemblyjs/ast@1.9.0
+238 silly saveTree   | +-- @webassemblyjs/helper-module-context@1.9.0
+238 silly saveTree   | +-- @webassemblyjs/helper-wasm-bytecode@1.9.0
+238 silly saveTree   | `-- @webassemblyjs/wast-parser@1.9.0
+238 silly saveTree   |   +-- @webassemblyjs/floating-point-hex-parser@1.9.0
+238 silly saveTree   |   +-- @webassemblyjs/helper-api-error@1.9.0
+238 silly saveTree   |   +-- @webassemblyjs/helper-code-frame@1.9.0
+238 silly saveTree   |   | `-- @webassemblyjs/wast-printer@1.9.0
+238 silly saveTree   |   |   `-- @xtuc/long@4.2.2
+238 silly saveTree   |   +-- @webassemblyjs/helper-fsm@1.9.0
+238 silly saveTree   |   `-- @xtuc/long@4.2.2
+238 silly saveTree   +-- @webassemblyjs/helper-module-context@1.9.0
+238 silly saveTree   +-- @webassemblyjs/wasm-edit@1.9.0
+238 silly saveTree   | +-- @webassemblyjs/helper-buffer@1.9.0
+238 silly saveTree   | +-- @webassemblyjs/helper-wasm-section@1.9.0
+238 silly saveTree   | | `-- @webassemblyjs/wasm-gen@1.9.0
+238 silly saveTree   | |   +-- @webassemblyjs/ieee754@1.9.0
+238 silly saveTree   | |   | `-- @xtuc/ieee754@1.2.0
+238 silly saveTree   | |   +-- @webassemblyjs/leb128@1.9.0
+238 silly saveTree   | |   `-- @webassemblyjs/utf8@1.9.0
+238 silly saveTree   | +-- @webassemblyjs/wasm-gen@1.9.0
+238 silly saveTree   | +-- @webassemblyjs/wasm-opt@1.9.0
+238 silly saveTree   | | `-- @webassemblyjs/wasm-parser@1.9.0
+238 silly saveTree   | `-- @webassemblyjs/wasm-parser@1.9.0
+238 silly saveTree   +-- @webassemblyjs/wasm-parser@1.9.0
+238 silly saveTree   +-- acorn@8.0.4
+238 silly saveTree   +-- browserslist@4.14.7
+238 silly saveTree   | +-- caniuse-lite@1.0.30001158
+238 silly saveTree   | +-- electron-to-chromium@1.3.596
+238 silly saveTree   | +-- escalade@3.1.1
+238 silly saveTree   | `-- node-releases@1.1.66
+238 silly saveTree   +-- chrome-trace-event@1.0.2
+238 silly saveTree   | `-- tslib@1.14.1
+238 silly saveTree   +-- enhanced-resolve@5.3.1
+238 silly saveTree   | +-- graceful-fs@4.2.4
+238 silly saveTree   | `-- tapable@2.1.1
+238 silly saveTree   +-- eslint-scope@5.1.1
+238 silly saveTree   | +-- esrecurse@4.3.0
+238 silly saveTree   | | `-- estraverse@5.2.0
+238 silly saveTree   | `-- estraverse@4.3.0
+238 silly saveTree   +-- events@3.2.0
+238 silly saveTree   +-- glob-to-regexp@0.4.1
+238 silly saveTree   +-- graceful-fs@4.2.4
+238 silly saveTree   +-- json-parse-better-errors@1.0.2
+238 silly saveTree   +-- loader-runner@4.1.0
+238 silly saveTree   +-- mime-types@2.1.27
+238 silly saveTree   | `-- mime-db@1.44.0
+238 silly saveTree   +-- neo-async@2.6.2
+238 silly saveTree   +-- pkg-dir@4.2.0
+238 silly saveTree   | `-- find-up@4.1.0
+238 silly saveTree   |   +-- locate-path@5.0.0
+238 silly saveTree   |   | `-- p-locate@4.1.0
+238 silly saveTree   |   |   `-- p-limit@2.3.0
+238 silly saveTree   |   |     `-- p-try@2.2.0
+238 silly saveTree   |   `-- path-exists@4.0.0
+238 silly saveTree   +-- schema-utils@3.0.0
+238 silly saveTree   | +-- ajv-keywords@3.5.2
+238 silly saveTree   | `-- ajv@6.12.6
+238 silly saveTree   |   +-- fast-deep-equal@3.1.3
+238 silly saveTree   |   +-- fast-json-stable-stringify@2.1.0
+238 silly saveTree   |   +-- json-schema-traverse@0.4.1
+238 silly saveTree   |   `-- uri-js@4.4.0
+238 silly saveTree   |     `-- punycode@2.1.1
+238 silly saveTree   +-- tapable@2.1.1
+238 silly saveTree   +-- terser-webpack-plugin@5.0.3
+238 silly saveTree   | +-- jest-worker@26.6.2
+238 silly saveTree   | | +-- merge-stream@2.0.0
+238 silly saveTree   | | `-- supports-color@7.2.0
+238 silly saveTree   | +-- p-limit@3.0.2
+238 silly saveTree   | +-- serialize-javascript@5.0.1
+238 silly saveTree   | +-- source-map@0.6.1
+238 silly saveTree   | `-- terser@5.3.8
+238 silly saveTree   +-- watchpack@2.0.1
+238 silly saveTree   `-- webpack-sources@2.2.0
+239 verbose stack SyntaxError: Unexpected end of JSON input while parsing near '...2f2f956cae4828f825589'
+239 verbose stack     at JSON.parse (<anonymous>)
+239 verbose stack     at parseJson (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\json-parse-better-errors\index.js:7:17)
+239 verbose stack     at C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\node-fetch-npm\src\body.js:96:50
+239 verbose stack     at runMicrotasks (<anonymous>)
+239 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+240 verbose cwd F:\Github_my_project\WEB\webpack_learn
+241 verbose Windows_NT 10.0.18363
+242 verbose argv "D:\\NodeJS\\node.exe" "C:\\Users\\game\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "i" "webpack" "webpack-cli" "-D"
+243 verbose node v12.13.1
+244 verbose npm  v6.14.5
+245 error Unexpected end of JSON input while parsing near '...2f2f956cae4828f825589'
+246 verbose exit [ 1, true ]

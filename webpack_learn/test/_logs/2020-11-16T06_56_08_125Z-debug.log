@@ -1,0 +1,63 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'D:\\NodeJS\\node.exe',
+1 verbose cli   'C:\\Users\\game\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   'webpack',
+1 verbose cli   'webpack-cli',
+1 verbose cli   '-D'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v12.13.1
+4 verbose npm-session b191186d8c616012
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 200 https://registry.npm.taobao.org/webpack-cli 226ms
+8 silly pacote tag manifest for webpack-cli@latest fetched in 243ms
+9 http fetch GET 200 https://registry.npm.taobao.org/webpack 257ms
+10 silly pacote tag manifest for webpack@latest fetched in 293ms
+11 timing stage:loadCurrentTree Completed in 321ms
+12 silly install loadIdealTree
+13 silly install cloneCurrentTreeToIdealTree
+14 timing stage:loadIdealTree:cloneCurrentTree Completed in 0ms
+15 silly install loadShrinkwrap
+16 timing stage:loadIdealTree:loadShrinkwrap Completed in 1ms
+17 silly install loadAllDepsIntoIdealTree
+18 timing stage:rollbackFailedOptional Completed in 0ms
+19 timing stage:runTopLevelLifecycles Completed in 323ms
+20 silly saveTree webpack@1.0.0
+21 verbose stack Error: Refusing to install package with name "webpack" under a package
+21 verbose stack also called "webpack". Did you name your project the same
+21 verbose stack as the dependency you're installing?
+21 verbose stack
+21 verbose stack For more information, see:
+21 verbose stack     <https://docs.npmjs.com/cli/install#limitations-of-npms-install-algorithm>
+21 verbose stack     at checkSelf (C:\Users\game\AppData\Roaming\npm\node_modules\npm\lib\install\validate-args.js:75:14)
+21 verbose stack     at Array.<anonymous> (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+21 verbose stack     at LOOP (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+21 verbose stack     at C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\chain.js:18:7
+21 verbose stack     at hasMinimumFields (C:\Users\game\AppData\Roaming\npm\node_modules\npm\lib\install\validate-args.js:30:12)
+21 verbose stack     at Array.<anonymous> (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+21 verbose stack     at LOOP (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+21 verbose stack     at chain (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\chain.js:20:5)
+21 verbose stack     at C:\Users\game\AppData\Roaming\npm\node_modules\npm\lib\install\validate-args.js:16:5
+21 verbose stack     at C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\async-map.js:52:35
+21 verbose stack     at Array.forEach (<anonymous>)
+21 verbose stack     at C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\async-map.js:52:11
+21 verbose stack     at Array.forEach (<anonymous>)
+21 verbose stack     at asyncMap (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\async-map.js:51:8)
+21 verbose stack     at module.exports (C:\Users\game\AppData\Roaming\npm\node_modules\npm\lib\install\validate-args.js:15:3)
+21 verbose stack     at Array.<anonymous> (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+22 verbose cwd F:\Github_my_project\WEB\webpack
+23 verbose Windows_NT 10.0.18363
+24 verbose argv "D:\\NodeJS\\node.exe" "C:\\Users\\game\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "i" "webpack" "webpack-cli" "-D"
+25 verbose node v12.13.1
+26 verbose npm  v6.14.5
+27 error code ENOSELF
+28 error Refusing to install package with name "webpack" under a package
+28 error also called "webpack". Did you name your project the same
+28 error as the dependency you're installing?
+28 error
+28 error For more information, see:
+28 error     <https://docs.npmjs.com/cli/install#limitations-of-npms-install-algorithm>
+29 verbose exit [ 1, true ]
