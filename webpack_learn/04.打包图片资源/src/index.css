@@ -1,0 +1,30 @@
+html,
+body {
+  background-color: aqua;
+}
+
+.img {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img1 {
+  background-image: url("../../images/1.jpg");
+  width: 200px;
+  height: 200px;
+  background-position: center;
+}
+
+.img2 {
+  background-image: url("../../images/2.jpg");
+  width: 200px;
+  height: 200px;
+  background-position: center;
+}
+
+.img3 {
+  background-image: url("../../images/3.jpg");
+  width: 200px;
+  height: 200px;
+  background-position: center;
+}
