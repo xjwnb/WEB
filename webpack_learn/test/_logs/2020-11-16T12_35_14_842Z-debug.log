@@ -1,0 +1,43 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'D:\\NodeJS\\node.exe',
+1 verbose cli   'C:\\Users\\game\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   'webpack-dev-server@3.3.2',
+1 verbose cli   '-D'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v12.13.1
+4 verbose npm-session f7f0421500f1896f
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 304 https://registry.npm.taobao.org/webpack-dev-server 302ms (from cache)
+8 silly registry:manifest no matching version for webpack-dev-server@3.3.2 in the cache. Forcing revalidation.
+9 http fetch GET 200 https://registry.npm.taobao.org/webpack-dev-server 312ms
+10 silly fetchPackageMetaData error for webpack-dev-server@3.3.2 No matching version found for webpack-dev-server@3.3.2.
+11 timing stage:rollbackFailedOptional Completed in 2ms
+12 timing stage:runTopLevelLifecycles Completed in 1005ms
+13 verbose type version
+14 verbose stack webpack-dev-server: No matching version found for webpack-dev-server@3.3.2.
+14 verbose stack     at pickManifest (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\npm-pick-manifest\index.js:122:13)
+14 verbose stack     at C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\pacote\lib\fetchers\registry\manifest.js:43:18
+14 verbose stack     at tryCatcher (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\util.js:16:23)
+14 verbose stack     at Promise._settlePromiseFromHandler (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:517:31)
+14 verbose stack     at Promise._settlePromise (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:574:18)
+14 verbose stack     at Promise._settlePromise0 (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:619:10)
+14 verbose stack     at Promise._settlePromises (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\promise.js:699:18)
+14 verbose stack     at _drainQueueStep (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\async.js:138:12)
+14 verbose stack     at _drainQueue (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\async.js:131:9)
+14 verbose stack     at Async._drainQueues (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\async.js:147:5)
+14 verbose stack     at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\game\AppData\Roaming\npm\node_modules\npm\node_modules\bluebird\js\release\async.js:17:14)
+14 verbose stack     at processImmediate (internal/timers.js:439:21)
+15 verbose cwd F:\Github_my_project\WEB\webpack_learn
+16 verbose Windows_NT 10.0.18363
+17 verbose argv "D:\\NodeJS\\node.exe" "C:\\Users\\game\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "i" "webpack-dev-server@3.3.2" "-D"
+18 verbose node v12.13.1
+19 verbose npm  v6.14.5
+20 error code ETARGET
+21 error notarget No matching version found for webpack-dev-server@3.3.2.
+22 error notarget In most cases you or one of your dependencies are requesting
+22 error notarget a package version that doesn't exist.
+23 verbose exit [ 1, true ]
