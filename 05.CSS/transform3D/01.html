@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        perspective: 1000px;
+      }
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        /*       transform: translate3d(100px, 100px, 100px);
+      transform: rotateZ(45deg);
+      transform: rotateY(45deg);
+      transform: rotateX(45deg); */
+        /* transform: rotateX(60deg); */
+        /* transform: rotateY(0deg); */
+        /* transform: rotateX(60deg); */
+        animation: animate 2s;
+        /* transform: rotate3d(1, 1, 1, 30deg); */
+        /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+        animation-iteration-count: infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate3d(0, 0, 0, 30deg);
+          /* transform: rotateY(180deg);
+          transform: rotateX(60deg); */
+        }
+        100% {
+          transform: rotate3d(0, 0, 0, 360deg);
+
+          /* transform: rotateX(60deg);
+          transform: rotateY(360deg); */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div id="box"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+### TypeScript 文档：https://www.tslang.cn/docs/home.html
