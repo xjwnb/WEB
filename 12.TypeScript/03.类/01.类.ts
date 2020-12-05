@@ -45,6 +45,7 @@ zzx
 // 默认共有属性 public 
 
 // protected
+// protected 可以在当前类以及其子类中访问，但不可在外部调用。
 class Person1 {
   protected name: string;
   constructor(name: string) {
@@ -75,7 +76,8 @@ let person1 = new Person1("小卡车");
 console.log(person1.getName()); // undefined 外部不可访问到 protected 声明的属性
 
 
-// privated
+// private
+// private 只能在当前类中访问，但不可在其子类以及外部访问。
 class Person2 {
   private name: string;
   constructor(name: string) {
