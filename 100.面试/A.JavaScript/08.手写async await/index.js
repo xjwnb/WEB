@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-24 13:47:22
- * @LastEditTime: 2021-05-24 14:17:51
+ * @LastEditTime: 2021-05-24 14:39:38
  * @LastEditors: Please set LastEditors
  * @Description: 手写 async await
  * @FilePath: \WEB\100.面试\A.JavaScript\08.手写async await\index.js
@@ -47,6 +47,6 @@ function* generatorFunc(msg) {
 }
 
 let gen = asyncFunc(generatorFunc);
-gen('提示要出结果了').then((res) => {
+gen("提示要出结果了").then((res) => {
   console.log("generatorFunc", res);
 });
