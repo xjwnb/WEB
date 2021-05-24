@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-24 13:47:22
- * @LastEditTime: 2021-05-24 14:13:56
+ * @LastEditTime: 2021-05-24 14:17:51
  * @LastEditors: Please set LastEditors
  * @Description: 手写 async await
  * @FilePath: \WEB\100.面试\A.JavaScript\08.手写async await\index.js
@@ -29,6 +29,7 @@ function asyncFunc(generatorFunc) {
   };
 }
 
+// 测试代码
 function delay(time, a) {
   return new Promise((resolve) =>
     setTimeout(() => {
@@ -37,14 +38,15 @@ function delay(time, a) {
   );
 }
 
-function* generatorFunc() {
+function* generatorFunc(msg) {
   console.log("1");
   let first = yield delay(1000, 1);
   console.log("2");
+  console.log(msg);
   return yield delay(1000, first);
 }
 
 let gen = asyncFunc(generatorFunc);
-gen().then((res) => {
+gen('提示要出结果了').then((res) => {
   console.log("generatorFunc", res);
 });
