@@ -1,0 +1,28 @@
+{
+  "name": "WEB",
+  "version": "1.0.0",
+  "description": "<!--\r  * @Author: your name\r  * @Date: 2020-09-18 14:36:28\r  * @LastEditTime: 2020-10-01 13:44:40\r  * @LastEditors: your name\r  * @Description: In User Settings Edit\r  * @FilePath: \\WEB\\README.md\r -->\r ## 目录",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xjwnb/WEB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xjwnb/WEB/issues"
+  },
+  "homepage": "https://github.com/xjwnb/WEB#readme"
+}
