@@ -4,14 +4,6 @@ const FULFILLED = "fulfilled";
 const REJECTED = "rejected";
 
 class MyPromise {
-  constructor(executor) {
-    try {
-      executor(this.resolve, this.reject);
-    } catch (error) {
-      this.reject(error);
-    }
-  }
-
   status = PENDING;
 
   value = null;
@@ -19,6 +11,14 @@ class MyPromise {
 
   onFulfilledCallbacks = [];
   onRejectedCallbacks = [];
+
+  constructor(executor) {
+    try {
+      executor(this.resolve, this.reject);
+    } catch (error) {
+      this.reject(error);
+    }
+  }
 
   resolve = (value) => {
     if (this.status === PENDING) {
@@ -41,21 +41,21 @@ class MyPromise {
   };
 
   then(onFulfilled, onRejected) {
-    const realOnFulfilled =
+    onFulfilled =
       typeof onFulfilled === "function" ? onFulfilled : (value) => value;
-    const realOnRejected =
+    onRejected =
       typeof onRejected === "function"
         ? onRejected
         : (reason) => {
             throw reason;
           };
 
-    const promise2 = new MyPromise((resolve, reject) => {
+    const promise = new MyPromise((resolve, reject) => {
       const fulfilledMicrotask = () => {
         queueMicrotask(() => {
           try {
-            const x = realOnFulfilled(this.value);
-            resolvePromise(promise2, x, resolve, reject);
+            const x = onFulfilled(this.value);
+            resolvePromise(promise, x, resolve, reject);
           } catch (error) {
             reject(error);
           }
@@ -65,8 +65,8 @@ class MyPromise {
       const rejectedMicrotask = () => {
         queueMicrotask(() => {
           try {
-            const x = realOnRejected(this.reason);
-            resolvePromise(promise2, x, resolve, reject);
+            const x = onRejected(this.reason);
+            resolvePromise(promise, x, resolve, reject);
           } catch (error) {
             reject(error);
           }
@@ -82,7 +82,7 @@ class MyPromise {
       }
     });
 
-    return promise2;
+    return promise;
   }
 
   catch(onRejected) {
@@ -209,9 +209,7 @@ class MyPromise {
 
 function resolvePromise(promise, x, resolve, reject) {
   if (promise === x) {
-    return reject(
-      new TypeError("The promise and the return value are the same")
-    );
+    return reject(new TypeError("Error"));
   }
 
   if (typeof x === "object" || typeof x === "function") {
