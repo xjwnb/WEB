@@ -5,7 +5,6 @@ const REJECTED = "rejected";
 
 class MyPromise {
   constructor(executor) {
-
     try {
       executor(this.resolve, this.reject);
     } catch (error) {
